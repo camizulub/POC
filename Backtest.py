@@ -165,7 +165,7 @@ class MultiDataStrategy(bt.Strategy):
 
         if not self.position:  # not yet in market
             if ((self.signal1 == 1.0) or (self.signal1 == -1.0) or (self.signal2 == 1.0) or (self.signal2 == -1.0)) and self.flag==True\
-                and self.atr > self.ematr:
+                and self.atr > 2.5:
 
                 o1 = self.buy(exectype = bt.Order.Stop, price=(self.data.close[-1] + self.anchor), size=self.p.stake)
              
