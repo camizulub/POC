@@ -8,11 +8,10 @@ import numpy as np
 import backtrader as bt
 import backtrader.feeds as btfeeds
 import backtrader.indicators as btind
-from backtrader.analyzers import (SQN, SharpeRatio)
+import backtrader.analyzers as btanalyzers
 from market_profile import MarketProfile
-import time
 
-data = pd.read_csv('/home/milo/Dropbox/Codigos/Data/ES3W.csv', parse_dates=True, index_col='Date')
+data = pd.read_csv('C:/Users/MiloZB/Dropbox/Codigos/Data/ES_1min(2018).csv', parse_dates=True, index_col='Date')
 commission, margin, mult = 0.85, 50, 50.0
 
 class DataPrep(object):
@@ -67,6 +66,41 @@ class PandasData(btfeeds.PandasData):
         ('POC', -1),
         ('PPOC', -1),
     )
+
+def printTradeAnalysis(analyzer):
+    '''
+    Function to print the Technical Analysis results in a nice format.
+    '''
+    #Get the results we are interested in
+    total_open = analyzer.total.open
+    total_closed = analyzer.total.closed
+    total_won = analyzer.won.total
+    total_lost = analyzer.lost.total
+    win_streak = analyzer.streak.won.longest
+    lose_streak = analyzer.streak.lost.longest
+    pnl_net = round(analyzer.pnl.net.total,2)
+    strike_rate = (total_won / total_closed) * 100
+    #Designate the rows
+    h1 = ['Total Open', 'Total Closed', 'Total Won', 'Total Lost']
+    h2 = ['Strike Rate','Win Streak', 'Losing Streak', 'PnL Net']
+    r1 = [total_open, total_closed,total_won,total_lost]
+    r2 = [strike_rate, win_streak, lose_streak, pnl_net]
+    #Check which set of headers is the longest.
+    if len(h1) > len(h2):
+        header_length = len(h1)
+    else:
+        header_length = len(h2)
+    #Print the rows
+    print_list = [h1,r1,h2,r2]
+    row_format ="{:<15}" * (header_length + 1)
+    print("Trade Analysis Results:")
+    for row in print_list:
+        print(row_format.format('',*row))
+
+def printSQN(analyzer):
+    sqn = round(analyzer.sqn,2)
+    print('SQN: {}'.format(sqn))
+    
 
 class MultiDataStrategy(bt.Strategy):
     '''
@@ -137,14 +171,13 @@ class MultiDataStrategy(bt.Strategy):
         self.atr = bt.talib.ATR(self.data0.high, self.data0.low, self.data0.close, period=14)
         self.ematr = btind.ExponentialMovingAverage(self.atr, period=89)
         self.dataclose = self.data0.close
-        self.anchor = 5.0
-        self.expand = 1.0
+        self.anchor = 3.0
         self.signal1 = btind.CrossOver(self.dataclose, poc, plotname='POC')
         self.signal2 = btind.CrossOver(self.dataclose, ppoc, plotname='PPOC')
         self.flag=True
 
     def next(self):
-        global o1, o2, o3, o4, o5, o6, o1pnl, o2pnl, o3pnl, o4pnl, o5pnl
+        global o1, o2, o3, o4, o5, o1pnl, o2pnl, o3pnl, o4pnl
 
         pos = self.getposition(self.data0)  # for the default data (aka self.data0 and aka self.datas[0])
         comminfo = self.broker.getcommissioninfo(self.data0)
@@ -152,12 +185,17 @@ class MultiDataStrategy(bt.Strategy):
 
         if self.orderid:
             return  # if an order is active, no new orders are allowed
-        if self.p.printout:
+        '''if self.p.printout:
             txt = ','.join(
             ['%04d' % len(self.data0),
             self.data0.datetime.datetime(0).isoformat(),
             'Profit : %d' % pnl])
-        print(txt)
+        print(txt)'''
+
+        def closing(self, order):
+            self.close()
+            self.broker.cancel(order)
+            self.flag =True
 
         if not self.position:  # not yet in market
             if ((self.signal1 == 1.0) or (self.signal1 == -1.0) or (self.signal2 == 1.0) or (self.signal2 == -1.0)) and self.flag==True\
@@ -175,16 +213,12 @@ class MultiDataStrategy(bt.Strategy):
 
                 self.orefs = [o1.ref, o2.ref]
                 self.flag=False
+
         else:
-            
-            if self.atr[-1] > 2.5:
-                self.expand = 2.0
-            else:
-                self.expand = 1.0
 
             if (pos.size==self.p.stake) and (len(self.orefs)==0):
 
-                o3 = self.sell(exectype=bt.Order.Stop, price=(float(o1.executed.price)-self.anchor*self.expand),
+                o3 = self.sell(exectype=bt.Order.Stop, price=(float(o1.executed.price)-self.anchor*2),
                             size=self.p.stake*3)
                 
                 print(self.datetime.datetime(0),' : Oref %d / Sell Stop %d at %.5f' % (
@@ -194,7 +228,7 @@ class MultiDataStrategy(bt.Strategy):
 
             elif(pos.size==self.p.stake*-1) and (len(self.orefs)==0):
 
-                o3 = self.buy(exectype=bt.Order.Stop, price=(float(o2.executed.price)+self.anchor*self.expand),
+                o3 = self.buy(exectype=bt.Order.Stop, price=(float(o2.executed.price)+self.anchor*2),
                             size=self.p.stake*3)
                 
                 print(self.datetime.datetime(0),' : Oref %d / Buy Stop %d at %.5f' % (
@@ -210,7 +244,7 @@ class MultiDataStrategy(bt.Strategy):
             if (pos.size==self.p.stake*2):
                 o2pnl = round((o3.executed.price-o2.executed.price)*(o2.executed.size+o3.executed.size)*(mult/2), 5)
                 if (len(self.orefs)==0):
-                    o4 = self.sell(exectype=bt.Order.Stop, price=(float(o2.executed.price)-self.anchor*self.expand),
+                    o4 = self.sell(exectype=bt.Order.Stop, price=(float(o2.executed.price)-self.anchor*2),
                     size=self.p.stake*6)
                 
                     print(self.datetime.datetime(0),' : Oref %d / Sell Stop %d at %.5f' % (
@@ -226,7 +260,7 @@ class MultiDataStrategy(bt.Strategy):
             elif (pos.size==self.p.stake*2*-1):
                 o2pnl = round((o3.executed.price-o1.executed.price)*(o1.executed.size+o3.executed.size)*(mult/2), 5)                         
                 if (len(self.orefs)==0):
-                    o4 = self.buy(exectype=bt.Order.Stop, price=(float(o1.executed.price)+self.anchor*self.expand),
+                    o4 = self.buy(exectype=bt.Order.Stop, price=(float(o1.executed.price)+self.anchor*2),
                     size=self.p.stake*6)
                 
                     print(self.datetime.datetime(0),' : Oref %d / Buy Stop %d at %.5f' % (
@@ -242,7 +276,7 @@ class MultiDataStrategy(bt.Strategy):
             if (pos.size==self.p.stake*4):
                 o3pnl = round((o4.executed.price-o3.executed.price)*(o3.executed.size+o4.executed.size)*(mult/1.5), 5)
                 if (len(self.orefs)==0):
-                    o5 = self.sell(exectype=bt.Order.Stop, price=(float(o2.executed.price)-self.anchor*self.expand),
+                    o5 = self.sell(exectype=bt.Order.Stop, price=(float(o2.executed.price)-self.anchor*2),
                     size=self.p.stake*12)
                 
                     print(self.datetime.datetime(0),' : Oref %d / Sell Stop %d at %.5f' % (
@@ -259,7 +293,7 @@ class MultiDataStrategy(bt.Strategy):
                 o3pnl = round((o4.executed.price-o3.executed.price)*(o3.executed.size+o4.executed.size)*(mult/1.5), 5)
 
                 if (len(self.orefs)==0):
-                    o5 = self.buy(exectype=bt.Order.Stop, price=(float(o1.executed.price)+self.anchor*self.expand),
+                    o5 = self.buy(exectype=bt.Order.Stop, price=(float(o1.executed.price)+self.anchor*2),
                     size=self.p.stake*12)
                 
                     print(self.datetime.datetime(0),' : Oref %d / Buy Stop %d at %.5f' % (
@@ -272,42 +306,9 @@ class MultiDataStrategy(bt.Strategy):
                     self.broker.cancel(o5)
                     self.flag =True
 
-            if (pos.size==self.p.stake*8):
+            if (pos.size==self.p.stake*8) or (pos.size==self.p.stake*8*-1):
                 o4pnl = round((o5.executed.price-o4.executed.price)*(o4.executed.size+o5.executed.size)*(mult), 5)
-                if (len(self.orefs)==0):
-                    o6 = self.sell(exectype=bt.Order.Stop, price=(float(o2.executed.price)-self.anchor*self.expand),
-                    size=self.p.stake*24)
-                
-                    print(self.datetime.datetime(0),' : Oref %d / Sell Stop %d at %.5f' % (
-                        o6.ref, o6.size, o6.price))
-
-                    self.orefs.append(o6.ref)
-
-                if (pnl > (25 + abs(o2pnl + o3pnl + o4pnl))):
-                    self.close()
-                    self.broker.cancel(o6)
-                    self.flag =True
-
-            elif (pos.size==self.p.stake*8*-1):
-                o4pnl = round((o5.executed.price-o4.executed.price)*(o4.executed.size+o5.executed.size)*(mult), 5)
-
-                if (len(self.orefs)==0):
-                    o6 = self.buy(exectype=bt.Order.Stop, price=(float(o1.executed.price)+self.anchor*self.expand),
-                    size=self.p.stake*24)
-                
-                    print(self.datetime.datetime(0),' : Oref %d / Buy Stop %d at %.5f' % (
-                        o6.ref, o6.size, o6.price))
-
-                    self.orefs.append(o6.ref)
-
-                if (pnl > (25 + abs(o2pnl + o3pnl + o4pnl))):
-                    self.close()
-                    self.broker.cancel(o6)
-                    self.flag =True            
-
-            if (pos.size==self.p.stake*16) or (pos.size==self.p.stake*16*-1):
-                o5pnl = round((o6.executed.price-o5.executed.price)*(o5.executed.size+o6.executed.size)*(mult), 5)
-                if (pnl > (25 + o2pnl + o3pnl + o4pnl + o5pnl)):
+                if (pnl > (-50 + o2pnl + o3pnl + o4pnl)):
                     self.close()
                     self.flag=True           
 
@@ -364,15 +365,17 @@ def runstrategy():
         commission=commission, margin=margin, mult=mult)
 
     # Add the analyzers we are interested in
-    cerebro.addanalyzer(SharpeRatio, timeframe=bt.TimeFrame.Days)
-    cerebro.addanalyzer(SQN, _name="sqn")
-
-    cerebro.addwriter(bt.WriterFile, csv=args.writercsv, rounding=4)
+    cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name="ta")
+    cerebro.addanalyzer(bt.analyzers.SQN, _name="sqn")
 
     # And run it
     cerebro.run(runonce=not args.runnext,
                 preload=not args.nopreload,
                 oldsync=args.oldsync)
+
+    # print the analyzers
+    printTradeAnalysis(MultiDataStrategy.analyzers.ta.get_analysis())
+    printSQN(MultiDataStrategy.analyzers.sqn.get_analysis())
 
     # Plot if requested
     #if args.plot:
@@ -401,9 +404,6 @@ def parse_args():
 
     parser.add_argument('--plot', '-p', action='store_true',
                         help='Plot the read data')
-
-    parser.add_argument('--writercsv', '-wcsv', action='store_true',
-                        help='Tell the writer to produce a csv stream')
 
     parser.add_argument('--numfigs', '-n', default=1,
                         help='Plot using numfigs figures')
