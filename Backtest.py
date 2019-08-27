@@ -12,18 +12,19 @@ from backtrader.analyzers import (SQN, SharpeRatio)
 from market_profile import MarketProfile
 import time
 
-data = pd.read_csv('/home/milo/Dropbox/Codigos/Data/ES3W.csv', parse_dates=True, index_col='Date')
+data = pd.read_csv('/home/milo/Dropbox/Codigos/Data/ES_5sec(2018)Ninja.csv', parse_dates=True, index_col='Date')
 commission, margin, mult = 0.85, 50, 50.0
 
 class DataPrep(object):
     def mp_poc(self):
+        global pocs
         '''Calculates the POC for each Trading Session during the week'''
-        na0 = np.where((data.index.dayofweek == 6) & (data.index.hour == 17) & (data.index.minute == 0)) #for IB (17, 0)
-        nb0 = np.where((data.index.dayofweek == 4) & (data.index.hour == 15) & (data.index.minute == 59))#for IB (15, 59)
+        na0 = np.where((data.index.dayofweek == 6) & (data.index.hour == 18) & (data.index.minute == 0)) #for IB (17, 0)
+        nb0 = np.where((data.index.dayofweek == 4) & (data.index.hour == 16) & (data.index.minute == 0))#for IB (15, 59)
         na1 = np.where(((data.index.dayofweek == 0)|(data.index.dayofweek == 1)|(data.index.dayofweek == 2)\
-            |(data.index.dayofweek == 3)) & (data.index.hour == 15) & (data.index.minute == 31))#for IB (15, 31)
+            |(data.index.dayofweek == 3)) & (data.index.hour == 16) & (data.index.minute == 30))#for IB (15, 31)
         nb1 = np.where(((data.index.dayofweek == 0)|(data.index.dayofweek == 1)|(data.index.dayofweek == 2)\
-            |(data.index.dayofweek == 3)) & (data.index.hour == 15) & (data.index.minute == 14))#for IB (15, 14)
+            |(data.index.dayofweek == 3)) & (data.index.hour == 16) & (data.index.minute == 15))#for IB (15, 14)
         nmaster = np.concatenate([na0[0], nb0[0], na1[0], nb1[0]])
         nmaster = nmaster[nmaster>=na0[0][0]]
         nmaster.sort()
@@ -33,26 +34,34 @@ class DataPrep(object):
             a = data.index[i]
             b = data.index[k]
             mp_slice = mp[a:b]
-            data.loc[b, 'POC'] = mp_slice.poc_price
-        data.fillna(method='ffill', inplace=True)
-
-    def previous_POC(self):
-        '''If the Close price is below the POC calculates the last POC below the Close and viceversa'''
-        below = np.where(data.Close < data.POC)[0]
-        above = np.where(data.Close > data.POC)[0]
+            data.loc[b, 'Points'] = mp_slice.poc_price
+        pocs = data.Points.dropna().values
+        data['POC'] = data.Points.fillna(method='ffill')
         data['PPOC'] = np.nan
-        for i in below:
-            try:
-                prev = data[i::-1][data[i::-1].iloc[:, 5] < data.iloc[i, 5]].iloc[0, 5]
-                data.iloc[i, 6] = prev
-            except:
-                data.iloc[i, 6] = np.nan
-        for j in above:
-            try:
-                prev = data[j::-1][data[j::-1].iloc[:, 5] > data.iloc[j, 5]].iloc[0, 5]
-                data.iloc[j, 6] = prev
-            except:
-                data.iloc[j, 6] = np.nan
+
+    def lower_PPOC(self):
+        '''If the Close price is below the POC, it calculates the last lower POC'''
+        for x in range(len(pocs)-1,1,-1):
+            n = data[(data.Points == pocs[x-1])]     
+            for y in pocs[x::-1]:
+                if y < pocs[x]:
+                    val = y
+                    break
+                else:
+                    val = np.nan
+            data.loc[(data.POC == pocs[x]) & (data.Close < data.POC) & (data.index >= n.index[0]), 'PPOC'] = val
+
+    def upper_PPOC(self):
+        '''If the Close price is above the POC, it calculates the last upper POC'''
+        for x in range(len(pocs)-1,1,-1):
+            n = data[(data.Points == pocs[x-1])]     
+            for y in pocs[x::-1]:
+                if y > pocs[x]:
+                    val = y
+                    break
+                else:
+                    val = np.nan
+            data.loc[(data.POC == pocs[x]) & (data.Close > data.POC) & (data.index >= n.index[0]), 'PPOC'] = val
 
 class PandasData(btfeeds.PandasData):
     lines = ('POC', 'PPOC', )
@@ -141,6 +150,7 @@ class MultiDataStrategy(bt.Strategy):
         self.expand = 1.0
         self.signal1 = btind.CrossOver(self.dataclose, poc, plotname='POC')
         self.signal2 = btind.CrossOver(self.dataclose, ppoc, plotname='PPOC')
+        #self.trailing = True
         self.flag=True
 
     def next(self):
@@ -152,14 +162,15 @@ class MultiDataStrategy(bt.Strategy):
 
         if self.orderid:
             return  # if an order is active, no new orders are allowed
-        if self.p.printout:
+        '''if self.p.printout:
             txt = ','.join(
             ['%04d' % len(self.data0),
             self.data0.datetime.datetime(0).isoformat(),
             'Profit : %d' % pnl])
-        print(txt)
+        print(txt)'''
 
         if not self.position:  # not yet in market
+            #self.trailing = True 
             if ((self.signal1 == 1.0) or (self.signal1 == -1.0) or (self.signal2 == 1.0) or (self.signal2 == -1.0)) and self.flag==True\
                 and self.atr > self.ematr[-1]:
 
@@ -205,7 +216,20 @@ class MultiDataStrategy(bt.Strategy):
             if (pnl > 50*8) and o3.alive():
                 self.close()
                 self.broker.cancel(o3)
+                #self.trailing = True
                 self.flag =True
+
+            '''if (pnl > 50*2) and (pos.size == self.p.stake) and self.trailing:
+
+                ot = self.sell(size=self.p.stake, exectype=bt.Order.StopTrail, trailamount=1.0, parent=o1)
+                
+                self.trailing = False
+
+            if (pnl > 50*2) and (pos.size == self.p.stake) and self.trailing:
+
+                ot = self.buy(size=self.p.stake, exectype=bt.Order.StopTrail, trailamount=1.0, parent=o2)
+
+                self.trailing = False'''
 
             if (pos.size==self.p.stake*2):
                 o2pnl = round((o3.executed.price-o2.executed.price)*(o2.executed.size+o3.executed.size)*(mult/2), 5)
@@ -320,7 +344,9 @@ class MultiDataStrategy(bt.Strategy):
 def runstrategy():
 
     DataPrep.mp_poc(data)
-    DataPrep.previous_POC(data)
+    DataPrep.lower_PPOC(data)
+    DataPrep.upper_PPOC(data)
+    data.drop(columns=['Points'])
 
     args = parse_args()
 
@@ -328,7 +354,7 @@ def runstrategy():
     cerebro = bt.Cerebro()
 
     # Add the 1st data to cerebro
-    df=PandasData(dataname=data, name ="Minutes Data", timeframe=bt.TimeFrame.Minutes, compression=1)
+    df=PandasData(dataname=data, name ="Minutes Data", timeframe=bt.TimeFrame.Seconds, compression=5)
     cerebro.adddata(df)
 
     # Create the 2nd data
