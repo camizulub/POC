@@ -12,8 +12,8 @@ from backtrader.analyzers import (SQN, SharpeRatio)
 from market_profile import MarketProfile
 import time
 
-data = pd.read_csv('/home/milo/Dropbox/Codigos/Data/ES_5sec(2018)Ninja.csv', parse_dates=True, index_col='Date')
-commission, margin, mult = 0.85, 50, 50.0
+data = pd.read_csv('/home/milo/Dropbox/Codigos/Data/ES_1min(2018)Ninja.csv', parse_dates=True, index_col='Date')
+commission, margin, mult = 0.85, 20, 20.0
 
 class DataPrep(object):
     def mp_poc(self):
@@ -41,27 +41,34 @@ class DataPrep(object):
 
     def lower_PPOC(self):
         '''If the Close price is below the POC, it calculates the last lower POC'''
-        for x in range(len(pocs)-1,1,-1):
-            n = data[(data.Points == pocs[x-1])]     
-            for y in pocs[x::-1]:
+        for x in range(len(pocs)-1,0,-1):
+            n = data[(data.Points == pocs[x-1])]
+            a = np.where(pocs[x::-1] < pocs[x])
+            if len(a[0]) == 0:
+                continue
+            else:
+                data.loc[(data.POC == pocs[x]) & (data.Close < data.POC) & (data.index >= n.index[0]), 'PPOC'] = pocs[x-a[0][0]]
+            for y in pocs[x-a[0][0]-1::-1]:
                 if y < pocs[x]:
-                    val = y
-                    break
-                else:
-                    val = np.nan
-            data.loc[(data.POC == pocs[x]) & (data.Close < data.POC) & (data.index >= n.index[0]), 'PPOC'] = val
-
+                    if (data[(data.POC == pocs[x]) & (data.Close < data.POC) & (data.Close < data.PPOC) & (data.index >= n.index[0])].empty):
+                        break
+                    else:
+                        data.loc[(data.POC == pocs[x]) & (data.Close < data.POC) & (data.Close < data.PPOC) & (data.index >= n.index[0]), 'PPOC'] = y
     def upper_PPOC(self):
         '''If the Close price is above the POC, it calculates the last upper POC'''
-        for x in range(len(pocs)-1,1,-1):
-            n = data[(data.Points == pocs[x-1])]     
-            for y in pocs[x::-1]:
+        for x in range(len(pocs)-1,0,-1):
+            n = data[(data.Points == pocs[x-1])]
+            a = np.where(pocs[x::-1] > pocs[x])
+            if len(a[0]) == 0:
+                continue
+            else:
+                data.loc[(data.POC == pocs[x]) & (data.Close > data.POC) & (data.index >= n.index[0]), 'PPOC'] = pocs[x-a[0][0]]
+            for y in pocs[x-a[0][0]-1::-1]:
                 if y > pocs[x]:
-                    val = y
-                    break
-                else:
-                    val = np.nan
-            data.loc[(data.POC == pocs[x]) & (data.Close > data.POC) & (data.index >= n.index[0]), 'PPOC'] = val
+                    if (data[(data.POC == pocs[x]) & (data.Close > data.POC) & (data.Close > data.PPOC) & (data.index >= n.index[0])].empty):
+                        break
+                    else:
+                        data.loc[(data.POC == pocs[x]) & (data.Close > data.POC) & (data.Close > data.PPOC) & (data.index >= n.index[0]), 'PPOC'] = y
 
 class PandasData(btfeeds.PandasData):
     lines = ('POC', 'PPOC', )
@@ -146,7 +153,7 @@ class MultiDataStrategy(bt.Strategy):
         self.atr = bt.talib.ATR(self.data0.high, self.data0.low, self.data0.close, period=14)
         self.ematr = btind.ExponentialMovingAverage(self.atr, period=89)
         self.dataclose = self.data0.close
-        self.anchor = 5.0
+        self.anchor = 3.0
         self.expand = 1.0
         self.signal1 = btind.CrossOver(self.dataclose, poc, plotname='POC')
         self.signal2 = btind.CrossOver(self.dataclose, ppoc, plotname='PPOC')
@@ -172,7 +179,7 @@ class MultiDataStrategy(bt.Strategy):
         if not self.position:  # not yet in market
             #self.trailing = True 
             if ((self.signal1 == 1.0) or (self.signal1 == -1.0) or (self.signal2 == 1.0) or (self.signal2 == -1.0)) and self.flag==True\
-                and self.atr > self.ematr[-1]:
+                and self.atr > self.ematr:
 
                 o1 = self.buy(exectype = bt.Order.Stop, price=(self.data.close[-1] + self.anchor), size=self.p.stake)
              
@@ -188,7 +195,7 @@ class MultiDataStrategy(bt.Strategy):
                 self.flag=False
         else:
             
-            if self.atr[-1] > 2.5:
+            if self.atr > 2.5:
                 self.expand = 2.0
             else:
                 self.expand = 1.0
@@ -213,7 +220,7 @@ class MultiDataStrategy(bt.Strategy):
 
                 self.orefs.append(o3.ref)
 
-            if (pnl > 50*8) and o3.alive():
+            if (pnl > 5*8) and o3.alive():
                 self.close()
                 self.broker.cancel(o3)
                 #self.trailing = True
