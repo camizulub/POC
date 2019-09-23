@@ -1,0 +1,951 @@
+2018-09-10 18:12:32  : Oref 1 / Buy Stop 1 at 2880.75000
+2018-09-10 18:12:32  : Oref 2 / Sell Stop -1 at 2876.75000
+2018-09-10 18:12:33: Order ref: 1 / Type Buy / Status Submitted
+2018-09-10 18:12:33: Order ref: 2 / Type Sell / Status Submitted
+2018-09-10 18:12:33: Order ref: 1 / Type Buy / Status Accepted
+2018-09-10 18:12:33: Order ref: 2 / Type Sell / Status Accepted
+2018-09-10 18:42:04: Order ref: 1 / Type Buy / Status Completed
+2018-09-10T18:42:04, BUY EXECUTED, Size: 1.00, Ref: 1, Price: 2880.75000, Cost: 50.00000
+2018-09-10 18:42:04: Order ref: 2 / Type Sell / Status Canceled
+2018-09-10T18:42:04, Canceled ,
+2018-09-10 18:42:04  : Oref 3 / Sell Stop -3 at 2876.75000
+2018-09-10 18:42:05: Order ref: 3 / Type Sell / Status Submitted
+2018-09-10 18:42:05: Order ref: 3 / Type Sell / Status Accepted
+2018-09-10 20:08:09: Order ref: 3 / Type Sell / Status Canceled
+2018-09-10T20:08:09, Canceled ,
+2018-09-10 20:08:09: Order ref: 4 / Type Sell / Status Submitted
+2018-09-10 20:08:09: Order ref: 4 / Type Sell / Status Accepted
+2018-09-11 03:43:58: Order ref: 4 / Type Sell / Status Completed
+2018-09-11T03:43:58, SELL EXECUTED, Size: -1.00, Ref: 4,Price: 2881.25000, Cost: 50.00000
+2018-09-11T03:43:58, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-10-01 03:44:14  : Oref 5 / Buy Stop 1 at 2938.50000
+2018-10-01 03:44:14  : Oref 6 / Sell Stop -1 at 2934.50000
+2018-10-01 03:44:17: Order ref: 5 / Type Buy / Status Submitted
+2018-10-01 03:44:17: Order ref: 6 / Type Sell / Status Submitted
+2018-10-01 03:44:17: Order ref: 5 / Type Buy / Status Accepted
+2018-10-01 03:44:17: Order ref: 6 / Type Sell / Status Accepted
+2018-10-01 07:47:30: Order ref: 6 / Type Sell / Status Completed
+2018-10-01T07:47:30, SELL EXECUTED, Size: -1.00, Ref: 6,Price: 2934.50000, Cost: 50.00000
+2018-10-01 07:47:30: Order ref: 5 / Type Buy / Status Canceled
+2018-10-01T07:47:30, Canceled ,
+2018-10-01 07:47:30  : Oref 7 / Buy Stop 3 at 2938.50000
+2018-10-01 07:47:31: Order ref: 7 / Type Buy / Status Submitted
+2018-10-01 07:47:31: Order ref: 7 / Type Buy / Status Accepted
+2018-10-01 08:34:16: Order ref: 7 / Type Buy / Status Canceled
+2018-10-01T08:34:16, Canceled ,
+2018-10-01 08:34:16: Order ref: 8 / Type Buy / Status Submitted
+2018-10-01 08:34:16: Order ref: 8 / Type Buy / Status Accepted
+2018-10-01 09:08:01: Order ref: 8 / Type Buy / Status Completed
+2018-10-01T09:08:01, BUY EXECUTED, Size: 1.00, Ref: 8, Price: 2934.00000, Cost: 50.00000
+2018-10-01T09:08:01, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-10-07 19:42:01  : Oref 9 / Buy Stop 1 at 2893.25000
+2018-10-07 19:42:01  : Oref 10 / Sell Stop -1 at 2889.25000
+2018-10-07 19:42:02: Order ref: 9 / Type Buy / Status Submitted
+2018-10-07 19:42:02: Order ref: 10 / Type Sell / Status Submitted
+2018-10-07 19:42:02: Order ref: 9 / Type Buy / Status Accepted
+2018-10-07 19:42:02: Order ref: 10 / Type Sell / Status Accepted
+2018-10-07 19:42:08: Order ref: 10 / Type Sell / Status Completed
+2018-10-07T19:42:08, SELL EXECUTED, Size: -1.00, Ref: 10,Price: 2889.25000, Cost: 50.00000
+2018-10-07 19:42:08: Order ref: 9 / Type Buy / Status Canceled
+2018-10-07T19:42:08, Canceled ,
+2018-10-07 19:42:08  : Oref 11 / Buy Stop 3 at 2893.25000
+2018-10-07 19:42:09: Order ref: 11 / Type Buy / Status Submitted
+2018-10-07 19:42:09: Order ref: 11 / Type Buy / Status Accepted
+2018-10-07 20:09:44: Order ref: 11 / Type Buy / Status Completed
+2018-10-07T20:09:44, BUY EXECUTED, Size: 3.00, Ref: 11, Price: 2893.25000, Cost: 150.00000
+2018-10-07T20:09:44, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2018-10-07 20:09:44  : Oref 12 / Sell Stop -6 at 2885.25000
+2018-10-07 20:09:47: Order ref: 12 / Type Sell / Status Submitted
+2018-10-07 20:09:47: Order ref: 12 / Type Sell / Status Accepted
+2018-10-07 20:27:10: Order ref: 13 / Type Sell / Status Submitted
+2018-10-07 20:27:10: Order ref: 12 / Type Sell / Status Canceled
+2018-10-07T20:27:10, Canceled ,
+2018-10-07 20:27:10: Order ref: 13 / Type Sell / Status Accepted
+2018-10-07 20:27:10: Order ref: 13 / Type Sell / Status Completed
+2018-10-07T20:27:10, SELL EXECUTED, Size: -2.00, Ref: 13,Price: 2895.50000, Cost: 100.00000
+2018-10-07T20:27:10, OPERATION PROFIT, GROSS 225.00000, NET 221.60000
+2018-10-08 02:38:23  : Oref 14 / Buy Stop 1 at 2893.25000
+2018-10-08 02:38:23  : Oref 15 / Sell Stop -1 at 2889.25000
+2018-10-08 02:38:25: Order ref: 14 / Type Buy / Status Submitted
+2018-10-08 02:38:25: Order ref: 15 / Type Sell / Status Submitted
+2018-10-08 02:38:25: Order ref: 14 / Type Buy / Status Accepted
+2018-10-08 02:38:25: Order ref: 15 / Type Sell / Status Accepted
+2018-10-08 03:01:29: Order ref: 15 / Type Sell / Status Completed
+2018-10-08T03:01:29, SELL EXECUTED, Size: -1.00, Ref: 15,Price: 2889.25000, Cost: 50.00000
+2018-10-08 03:01:29: Order ref: 14 / Type Buy / Status Canceled
+2018-10-08T03:01:29, Canceled ,
+2018-10-08 03:01:29  : Oref 16 / Buy Stop 3 at 2893.25000
+2018-10-08 03:01:32: Order ref: 16 / Type Buy / Status Submitted
+2018-10-08 03:01:32: Order ref: 16 / Type Buy / Status Accepted
+2018-10-08 03:15:11: Order ref: 16 / Type Buy / Status Canceled
+2018-10-08T03:15:11, Canceled ,
+2018-10-08 03:15:11: Order ref: 17 / Type Buy / Status Submitted
+2018-10-08 03:15:11: Order ref: 17 / Type Buy / Status Accepted
+2018-10-08 03:33:04: Order ref: 17 / Type Buy / Status Completed
+2018-10-08T03:33:04, BUY EXECUTED, Size: 1.00, Ref: 17, Price: 2888.75000, Cost: 50.00000
+2018-10-08T03:33:04, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-10-14 20:00:53  : Oref 18 / Buy Stop 1 at 2771.25000
+2018-10-14 20:00:53  : Oref 19 / Sell Stop -1 at 2767.25000
+2018-10-14 20:00:54: Order ref: 18 / Type Buy / Status Submitted
+2018-10-14 20:00:54: Order ref: 19 / Type Sell / Status Submitted
+2018-10-14 20:00:54: Order ref: 18 / Type Buy / Status Accepted
+2018-10-14 20:00:54: Order ref: 19 / Type Sell / Status Accepted
+2018-10-14 20:03:13: Order ref: 19 / Type Sell / Status Completed
+2018-10-14T20:03:13, SELL EXECUTED, Size: -1.00, Ref: 19,Price: 2767.25000, Cost: 50.00000
+2018-10-14 20:03:13: Order ref: 18 / Type Buy / Status Canceled
+2018-10-14T20:03:13, Canceled ,
+2018-10-14 20:03:13  : Oref 20 / Buy Stop 3 at 2771.25000
+2018-10-14 20:03:14: Order ref: 20 / Type Buy / Status Submitted
+2018-10-14 20:03:14: Order ref: 20 / Type Buy / Status Accepted
+2018-10-14 20:12:58: Order ref: 20 / Type Buy / Status Canceled
+2018-10-14T20:12:58, Canceled ,
+2018-10-14 20:12:58: Order ref: 21 / Type Buy / Status Submitted
+2018-10-14 20:12:58: Order ref: 21 / Type Buy / Status Accepted
+2018-10-14 20:15:28: Order ref: 21 / Type Buy / Status Completed
+2018-10-14T20:15:28, BUY EXECUTED, Size: 1.00, Ref: 21, Price: 2766.75000, Cost: 50.00000
+2018-10-14T20:15:28, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-10-29 14:30:36  : Oref 22 / Buy Stop 1 at 2657.00000
+2018-10-29 14:30:36  : Oref 23 / Sell Stop -1 at 2653.00000
+2018-10-29 14:30:37: Order ref: 22 / Type Buy / Status Submitted
+2018-10-29 14:30:37: Order ref: 23 / Type Sell / Status Submitted
+2018-10-29 14:30:37: Order ref: 22 / Type Buy / Status Accepted
+2018-10-29 14:30:37: Order ref: 23 / Type Sell / Status Accepted
+2018-10-29 14:31:00: Order ref: 22 / Type Buy / Status Completed
+2018-10-29T14:31:00, BUY EXECUTED, Size: 1.00, Ref: 22, Price: 2657.00000, Cost: 50.00000
+2018-10-29 14:31:00: Order ref: 23 / Type Sell / Status Canceled
+2018-10-29T14:31:00, Canceled ,
+2018-10-29 14:31:00  : Oref 24 / Sell Stop -3 at 2653.00000
+2018-10-29 14:31:01: Order ref: 24 / Type Sell / Status Submitted
+2018-10-29 14:31:01: Order ref: 24 / Type Sell / Status Accepted
+2018-10-29 14:33:53: Order ref: 24 / Type Sell / Status Completed
+2018-10-29T14:33:53, SELL EXECUTED, Size: -3.00, Ref: 24,Price: 2653.00000, Cost: 150.00000
+2018-10-29T14:33:53, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2018-10-29 14:33:53  : Oref 25 / Buy Stop 6 at 2661.00000
+2018-10-29 14:33:54: Order ref: 25 / Type Buy / Status Submitted
+2018-10-29 14:33:54: Order ref: 25 / Type Buy / Status Accepted
+2018-10-29 14:42:28: Order ref: 25 / Type Buy / Status Completed
+2018-10-29T14:42:28, BUY EXECUTED, Size: 6.00, Ref: 25, Price: 2661.00000, Cost: 300.00000
+2018-10-29T14:42:28, OPERATION PROFIT, GROSS -800.00000, NET -803.40000
+800.0
+2018-10-29 14:42:28  : Oref 26 / Sell Stop -12 at 2653.00000
+2018-10-29 14:42:29: Order ref: 26 / Type Sell / Status Submitted
+2018-10-29 14:42:29: Order ref: 26 / Type Sell / Status Accepted
+2018-10-29 14:51:02: Order ref: 26 / Type Sell / Status Completed
+2018-10-29T14:51:02, SELL EXECUTED, Size: -12.00, Ref: 26,Price: 2653.00000, Cost: 600.00000
+2018-10-29T14:51:02, OPERATION PROFIT, GROSS -1600.00000, NET -1606.80000
+1600.0
+2018-10-29 14:51:02  : Oref 27 / Buy Stop 24 at 2661.00000
+2018-10-29 14:51:03: Order ref: 27 / Type Buy / Status Submitted
+2018-10-29 14:51:03: Order ref: 27 / Type Buy / Status Accepted
+2018-10-29 15:00:23: Order ref: 28 / Type Buy / Status Submitted
+2018-10-29 15:00:23: Order ref: 27 / Type Buy / Status Canceled
+2018-10-29T15:00:23, Canceled ,
+2018-10-29 15:00:23: Order ref: 28 / Type Buy / Status Accepted
+2018-10-29 15:00:23: Order ref: 28 / Type Buy / Status Completed
+2018-10-29T15:00:23, BUY EXECUTED, Size: 8.00, Ref: 28, Price: 2646.25000, Cost: 400.00000
+2018-10-29T15:00:23, OPERATION PROFIT, GROSS 2700.00000, NET 2686.40000
+2018-10-29 21:28:56  : Oref 29 / Buy Stop 1 at 2657.50000
+2018-10-29 21:28:56  : Oref 30 / Sell Stop -1 at 2653.50000
+2018-10-29 21:28:57: Order ref: 29 / Type Buy / Status Submitted
+2018-10-29 21:28:57: Order ref: 30 / Type Sell / Status Submitted
+2018-10-29 21:28:57: Order ref: 29 / Type Buy / Status Accepted
+2018-10-29 21:28:57: Order ref: 30 / Type Sell / Status Accepted
+2018-10-29 21:33:58: Order ref: 30 / Type Sell / Status Completed
+2018-10-29T21:33:58, SELL EXECUTED, Size: -1.00, Ref: 30,Price: 2653.50000, Cost: 50.00000
+2018-10-29 21:33:58: Order ref: 29 / Type Buy / Status Canceled
+2018-10-29T21:33:58, Canceled ,
+2018-10-29 21:33:58  : Oref 31 / Buy Stop 3 at 2657.50000
+2018-10-29 21:33:59: Order ref: 31 / Type Buy / Status Submitted
+2018-10-29 21:33:59: Order ref: 31 / Type Buy / Status Accepted
+2018-10-29 21:35:18: Order ref: 31 / Type Buy / Status Canceled
+2018-10-29T21:35:18, Canceled ,
+2018-10-29 21:35:18: Order ref: 32 / Type Buy / Status Submitted
+2018-10-29 21:35:18: Order ref: 32 / Type Buy / Status Accepted
+2018-10-29 21:38:18: Order ref: 32 / Type Buy / Status Completed
+2018-10-29T21:38:18, BUY EXECUTED, Size: 1.00, Ref: 32, Price: 2653.00000, Cost: 50.00000
+2018-10-29T21:38:18, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-11-11 19:44:38  : Oref 33 / Buy Stop 1 at 2783.75000
+2018-11-11 19:44:38  : Oref 34 / Sell Stop -1 at 2779.75000
+2018-11-11 19:44:40: Order ref: 33 / Type Buy / Status Submitted
+2018-11-11 19:44:40: Order ref: 34 / Type Sell / Status Submitted
+2018-11-11 19:44:40: Order ref: 33 / Type Buy / Status Accepted
+2018-11-11 19:44:40: Order ref: 34 / Type Sell / Status Accepted
+2018-11-11 20:03:24: Order ref: 33 / Type Buy / Status Completed
+2018-11-11T20:03:24, BUY EXECUTED, Size: 1.00, Ref: 33, Price: 2783.75000, Cost: 50.00000
+2018-11-11 20:03:24: Order ref: 34 / Type Sell / Status Canceled
+2018-11-11T20:03:24, Canceled ,
+2018-11-11 20:03:24  : Oref 35 / Sell Stop -3 at 2779.75000
+2018-11-11 20:03:27: Order ref: 35 / Type Sell / Status Submitted
+2018-11-11 20:03:27: Order ref: 35 / Type Sell / Status Accepted
+2018-11-11 20:07:30: Order ref: 35 / Type Sell / Status Canceled
+2018-11-11T20:07:30, Canceled ,
+2018-11-11 20:07:30: Order ref: 36 / Type Sell / Status Submitted
+2018-11-11 20:07:30: Order ref: 36 / Type Sell / Status Accepted
+2018-11-11 22:34:43: Order ref: 37 / Type Sell / Status Submitted
+2018-11-11 22:34:43: Order ref: 36 / Type Sell / Status Canceled
+2018-11-11T22:34:43, Canceled ,
+2018-11-11 22:34:43: Order ref: 37 / Type Sell / Status Accepted
+2018-11-11 22:34:43: Order ref: 37 / Type Sell / Status Completed
+2018-11-11T22:34:43, SELL EXECUTED, Size: -1.00, Ref: 37,Price: 2792.50000, Cost: 50.00000
+2018-11-11T22:34:43, OPERATION PROFIT, GROSS 437.50000, NET 435.80000
+2018-11-12 03:31:16  : Oref 38 / Buy Stop 1 at 2784.25000
+2018-11-12 03:31:16  : Oref 39 / Sell Stop -1 at 2780.25000
+2018-11-12 03:31:20: Order ref: 38 / Type Buy / Status Submitted
+2018-11-12 03:31:20: Order ref: 39 / Type Sell / Status Submitted
+2018-11-12 03:31:20: Order ref: 38 / Type Buy / Status Accepted
+2018-11-12 03:31:20: Order ref: 39 / Type Sell / Status Accepted
+2018-11-12 03:37:35: Order ref: 39 / Type Sell / Status Completed
+2018-11-12T03:37:35, SELL EXECUTED, Size: -1.00, Ref: 39,Price: 2780.25000, Cost: 50.00000
+2018-11-12 03:37:35: Order ref: 38 / Type Buy / Status Canceled
+2018-11-12T03:37:35, Canceled ,
+2018-11-12 03:37:35  : Oref 40 / Buy Stop 3 at 2784.25000
+2018-11-12 03:37:36: Order ref: 40 / Type Buy / Status Submitted
+2018-11-12 03:37:36: Order ref: 40 / Type Buy / Status Accepted
+2018-11-12 03:57:30: Order ref: 40 / Type Buy / Status Canceled
+2018-11-12T03:57:30, Canceled ,
+2018-11-12 03:57:30: Order ref: 41 / Type Buy / Status Submitted
+2018-11-12 03:57:30: Order ref: 41 / Type Buy / Status Accepted
+2018-11-12 04:00:25: Order ref: 41 / Type Buy / Status Completed
+2018-11-12T04:00:25, BUY EXECUTED, Size: 1.00, Ref: 41, Price: 2779.75000, Cost: 50.00000
+2018-11-12T04:00:25, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-11-19 02:52:28  : Oref 42 / Buy Stop 1 at 2740.25000
+2018-11-19 02:52:28  : Oref 43 / Sell Stop -1 at 2736.25000
+2018-11-19 02:52:32: Order ref: 42 / Type Buy / Status Submitted
+2018-11-19 02:52:32: Order ref: 43 / Type Sell / Status Submitted
+2018-11-19 02:52:32: Order ref: 42 / Type Buy / Status Accepted
+2018-11-19 02:52:32: Order ref: 43 / Type Sell / Status Accepted
+2018-11-19 03:05:05: Order ref: 42 / Type Buy / Status Completed
+2018-11-19T03:05:05, BUY EXECUTED, Size: 1.00, Ref: 42, Price: 2740.25000, Cost: 50.00000
+2018-11-19 03:05:05: Order ref: 43 / Type Sell / Status Canceled
+2018-11-19T03:05:05, Canceled ,
+2018-11-19 03:05:05  : Oref 44 / Sell Stop -3 at 2736.25000
+2018-11-19 03:05:06: Order ref: 44 / Type Sell / Status Submitted
+2018-11-19 03:05:06: Order ref: 44 / Type Sell / Status Accepted
+2018-11-19 03:06:47: Order ref: 44 / Type Sell / Status Canceled
+2018-11-19T03:06:47, Canceled ,
+2018-11-19 03:06:47: Order ref: 45 / Type Sell / Status Submitted
+2018-11-19 03:06:47: Order ref: 45 / Type Sell / Status Accepted
+2018-11-19 04:14:30: Order ref: 45 / Type Sell / Status Completed
+2018-11-19T04:14:30, SELL EXECUTED, Size: -1.00, Ref: 45,Price: 2740.75000, Cost: 50.00000
+2018-11-19T04:14:30, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-11-26 03:00:40  : Oref 46 / Buy Stop 1 at 2655.00000
+2018-11-26 03:00:40  : Oref 47 / Sell Stop -1 at 2651.00000
+2018-11-26 03:00:41: Order ref: 46 / Type Buy / Status Submitted
+2018-11-26 03:00:41: Order ref: 47 / Type Sell / Status Submitted
+2018-11-26 03:00:41: Order ref: 46 / Type Buy / Status Accepted
+2018-11-26 03:00:41: Order ref: 47 / Type Sell / Status Accepted
+2018-11-26 03:01:53: Order ref: 46 / Type Buy / Status Completed
+2018-11-26T03:01:53, BUY EXECUTED, Size: 1.00, Ref: 46, Price: 2655.00000, Cost: 50.00000
+2018-11-26 03:01:53: Order ref: 47 / Type Sell / Status Canceled
+2018-11-26T03:01:53, Canceled ,
+2018-11-26 03:01:53  : Oref 48 / Sell Stop -3 at 2651.00000
+2018-11-26 03:01:54: Order ref: 48 / Type Sell / Status Submitted
+2018-11-26 03:01:54: Order ref: 48 / Type Sell / Status Accepted
+2018-11-26 03:14:20: Order ref: 48 / Type Sell / Status Canceled
+2018-11-26T03:14:20, Canceled ,
+2018-11-26 03:14:20: Order ref: 49 / Type Sell / Status Submitted
+2018-11-26 03:14:20: Order ref: 49 / Type Sell / Status Accepted
+2018-11-26 03:39:23: Order ref: 50 / Type Sell / Status Submitted
+2018-11-26 03:39:23: Order ref: 49 / Type Sell / Status Canceled
+2018-11-26T03:39:23, Canceled ,
+2018-11-26 03:39:23: Order ref: 50 / Type Sell / Status Accepted
+2018-11-26 03:39:23: Order ref: 50 / Type Sell / Status Completed
+2018-11-26T03:39:23, SELL EXECUTED, Size: -1.00, Ref: 50,Price: 2663.00000, Cost: 50.00000
+2018-11-26T03:39:23, OPERATION PROFIT, GROSS 400.00000, NET 398.30000
+2018-11-26 03:49:55  : Oref 51 / Buy Stop 1 at 2666.75000
+2018-11-26 03:49:55  : Oref 52 / Sell Stop -1 at 2662.75000
+2018-11-26 03:49:56: Order ref: 51 / Type Buy / Status Submitted
+2018-11-26 03:49:56: Order ref: 52 / Type Sell / Status Submitted
+2018-11-26 03:49:56: Order ref: 51 / Type Buy / Status Accepted
+2018-11-26 03:49:56: Order ref: 52 / Type Sell / Status Accepted
+2018-11-26 03:58:22: Order ref: 52 / Type Sell / Status Completed
+2018-11-26T03:58:22, SELL EXECUTED, Size: -1.00, Ref: 52,Price: 2662.75000, Cost: 50.00000
+2018-11-26 03:58:22: Order ref: 51 / Type Buy / Status Canceled
+2018-11-26T03:58:22, Canceled ,
+2018-11-26 03:58:22  : Oref 53 / Buy Stop 3 at 2666.75000
+2018-11-26 03:58:23: Order ref: 53 / Type Buy / Status Submitted
+2018-11-26 03:58:23: Order ref: 53 / Type Buy / Status Accepted
+2018-11-26 05:11:22: Order ref: 53 / Type Buy / Status Canceled
+2018-11-26T05:11:22, Canceled ,
+2018-11-26 05:11:22: Order ref: 54 / Type Buy / Status Submitted
+2018-11-26 05:11:22: Order ref: 54 / Type Buy / Status Accepted
+2018-11-26 06:05:07: Order ref: 54 / Type Buy / Status Completed
+2018-11-26T06:05:07, BUY EXECUTED, Size: 1.00, Ref: 54, Price: 2662.25000, Cost: 50.00000
+2018-11-26T06:05:07, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-12-03 16:32:21  : Oref 55 / Buy Stop 1 at 2791.25000
+2018-12-03 16:32:21  : Oref 56 / Sell Stop -1 at 2787.25000
+2018-12-03 16:32:22: Order ref: 55 / Type Buy / Status Submitted
+2018-12-03 16:32:22: Order ref: 56 / Type Sell / Status Submitted
+2018-12-03 16:32:22: Order ref: 55 / Type Buy / Status Accepted
+2018-12-03 16:32:22: Order ref: 56 / Type Sell / Status Accepted
+2018-12-03 16:54:37: Order ref: 55 / Type Buy / Status Completed
+2018-12-03T16:54:37, BUY EXECUTED, Size: 1.00, Ref: 55, Price: 2791.25000, Cost: 50.00000
+2018-12-03 16:54:37: Order ref: 56 / Type Sell / Status Canceled
+2018-12-03T16:54:37, Canceled ,
+2018-12-03 16:54:37  : Oref 57 / Sell Stop -3 at 2787.25000
+2018-12-03 16:54:40: Order ref: 57 / Type Sell / Status Submitted
+2018-12-03 16:54:40: Order ref: 57 / Type Sell / Status Accepted
+2018-12-03 18:00:55: Order ref: 57 / Type Sell / Status Completed
+2018-12-03T18:00:55, SELL EXECUTED, Size: -3.00, Ref: 57,Price: 2787.25000, Cost: 150.00000
+2018-12-03T18:00:55, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2018-12-03 18:00:55  : Oref 58 / Buy Stop 6 at 2795.25000
+2018-12-03 18:00:56: Order ref: 58 / Type Buy / Status Submitted
+2018-12-03 18:00:56: Order ref: 58 / Type Buy / Status Accepted
+2018-12-03 19:05:02: Order ref: 59 / Type Buy / Status Submitted
+2018-12-03 19:05:02: Order ref: 58 / Type Buy / Status Canceled
+2018-12-03T19:05:02, Canceled ,
+2018-12-03 19:05:02: Order ref: 59 / Type Buy / Status Accepted
+2018-12-03 19:05:02: Order ref: 59 / Type Buy / Status Completed
+2018-12-03T19:05:02, BUY EXECUTED, Size: 2.00, Ref: 59, Price: 2784.75000, Cost: 100.00000
+2018-12-03T19:05:02, OPERATION PROFIT, GROSS 250.00000, NET 246.60000
+2018-12-05 18:02:22  : Oref 60 / Buy Stop 1 at 2653.00000
+2018-12-05 18:02:22  : Oref 61 / Sell Stop -1 at 2649.00000
+2018-12-05 18:02:23: Order ref: 60 / Type Buy / Status Submitted
+2018-12-05 18:02:23: Order ref: 61 / Type Sell / Status Submitted
+2018-12-05 18:02:23: Order ref: 60 / Type Buy / Status Accepted
+2018-12-05 18:02:23: Order ref: 61 / Type Sell / Status Accepted
+2018-12-05 18:02:25: Order ref: 60 / Type Buy / Status Completed
+2018-12-05T18:02:25, BUY EXECUTED, Size: 1.00, Ref: 60, Price: 2653.00000, Cost: 50.00000
+2018-12-05 18:02:25: Order ref: 61 / Type Sell / Status Canceled
+2018-12-05T18:02:25, Canceled ,
+2018-12-05 18:02:25  : Oref 62 / Sell Stop -3 at 2645.00000
+2018-12-05 18:02:26: Order ref: 62 / Type Sell / Status Submitted
+2018-12-05 18:02:26: Order ref: 62 / Type Sell / Status Accepted
+2018-12-05 18:02:27: Order ref: 62 / Type Sell / Status Canceled
+2018-12-05T18:02:27, Canceled ,
+2018-12-05 18:02:27: Order ref: 63 / Type Sell / Status Submitted
+2018-12-05 18:02:27: Order ref: 63 / Type Sell / Status Accepted
+2018-12-05 18:02:34: Order ref: 63 / Type Sell / Status Completed
+2018-12-05T18:02:34, SELL EXECUTED, Size: -1.00, Ref: 63,Price: 2653.50000, Cost: 50.00000
+2018-12-05T18:02:34, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-12-10 07:45:56  : Oref 64 / Buy Stop 1 at 2636.25000
+2018-12-10 07:45:56  : Oref 65 / Sell Stop -1 at 2632.25000
+2018-12-10 07:45:57: Order ref: 64 / Type Buy / Status Submitted
+2018-12-10 07:45:57: Order ref: 65 / Type Sell / Status Submitted
+2018-12-10 07:45:57: Order ref: 64 / Type Buy / Status Accepted
+2018-12-10 07:45:57: Order ref: 65 / Type Sell / Status Accepted
+2018-12-10 07:47:36: Order ref: 64 / Type Buy / Status Completed
+2018-12-10T07:47:36, BUY EXECUTED, Size: 1.00, Ref: 64, Price: 2636.25000, Cost: 50.00000
+2018-12-10 07:47:36: Order ref: 65 / Type Sell / Status Canceled
+2018-12-10T07:47:36, Canceled ,
+2018-12-10 07:47:36  : Oref 66 / Sell Stop -3 at 2632.25000
+2018-12-10 07:47:37: Order ref: 66 / Type Sell / Status Submitted
+2018-12-10 07:47:37: Order ref: 66 / Type Sell / Status Accepted
+2018-12-10 07:56:31: Order ref: 66 / Type Sell / Status Canceled
+2018-12-10T07:56:31, Canceled ,
+2018-12-10 07:56:31: Order ref: 67 / Type Sell / Status Submitted
+2018-12-10 07:56:31: Order ref: 67 / Type Sell / Status Accepted
+2018-12-10 07:57:15: Order ref: 67 / Type Sell / Status Completed
+2018-12-10T07:57:15, SELL EXECUTED, Size: -1.00, Ref: 67,Price: 2636.75000, Cost: 50.00000
+2018-12-10T07:57:15, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2018-12-16 18:19:53  : Oref 68 / Buy Stop 1 at 2605.75000
+2018-12-16 18:19:53  : Oref 69 / Sell Stop -1 at 2601.75000
+2018-12-16 18:20:02: Order ref: 68 / Type Buy / Status Submitted
+2018-12-16 18:20:02: Order ref: 69 / Type Sell / Status Submitted
+2018-12-16 18:20:02: Order ref: 68 / Type Buy / Status Accepted
+2018-12-16 18:20:02: Order ref: 69 / Type Sell / Status Accepted
+2018-12-16 18:27:32: Order ref: 69 / Type Sell / Status Completed
+2018-12-16T18:27:32, SELL EXECUTED, Size: -1.00, Ref: 69,Price: 2601.75000, Cost: 50.00000
+2018-12-16 18:27:32: Order ref: 68 / Type Buy / Status Canceled
+2018-12-16T18:27:32, Canceled ,
+2018-12-16 18:27:32  : Oref 70 / Buy Stop 3 at 2605.75000
+2018-12-16 18:27:33: Order ref: 70 / Type Buy / Status Submitted
+2018-12-16 18:27:33: Order ref: 70 / Type Buy / Status Accepted
+2018-12-16 18:44:58: Order ref: 70 / Type Buy / Status Completed
+2018-12-16T18:44:58, BUY EXECUTED, Size: 3.00, Ref: 70, Price: 2605.75000, Cost: 150.00000
+2018-12-16T18:44:58, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2018-12-16 18:44:58  : Oref 71 / Sell Stop -6 at 2597.75000
+2018-12-16 18:45:01: Order ref: 71 / Type Sell / Status Submitted
+2018-12-16 18:45:01: Order ref: 71 / Type Sell / Status Accepted
+2018-12-16 18:52:51: Order ref: 72 / Type Sell / Status Submitted
+2018-12-16 18:52:51: Order ref: 71 / Type Sell / Status Canceled
+2018-12-16T18:52:51, Canceled ,
+2018-12-16 18:52:51: Order ref: 72 / Type Sell / Status Accepted
+2018-12-16 18:52:51: Order ref: 72 / Type Sell / Status Completed
+2018-12-16T18:52:51, SELL EXECUTED, Size: -2.00, Ref: 72,Price: 2608.25000, Cost: 100.00000
+2018-12-16T18:52:51, OPERATION PROFIT, GROSS 250.00000, NET 246.60000
+2018-12-17 03:16:31  : Oref 73 / Buy Stop 1 at 2605.50000
+2018-12-17 03:16:31  : Oref 74 / Sell Stop -1 at 2601.50000
+2018-12-17 03:16:36: Order ref: 73 / Type Buy / Status Submitted
+2018-12-17 03:16:36: Order ref: 74 / Type Sell / Status Submitted
+2018-12-17 03:16:36: Order ref: 73 / Type Buy / Status Accepted
+2018-12-17 03:16:36: Order ref: 74 / Type Sell / Status Accepted
+2018-12-17 03:22:19: Order ref: 73 / Type Buy / Status Completed
+2018-12-17T03:22:19, BUY EXECUTED, Size: 1.00, Ref: 73, Price: 2605.50000, Cost: 50.00000
+2018-12-17 03:22:19: Order ref: 74 / Type Sell / Status Canceled
+2018-12-17T03:22:19, Canceled ,
+2018-12-17 03:22:19  : Oref 75 / Sell Stop -3 at 2601.50000
+2018-12-17 03:22:20: Order ref: 75 / Type Sell / Status Submitted
+2018-12-17 03:22:20: Order ref: 75 / Type Sell / Status Accepted
+2018-12-17 03:22:30: Order ref: 75 / Type Sell / Status Canceled
+2018-12-17T03:22:30, Canceled ,
+2018-12-17 03:22:30: Order ref: 76 / Type Sell / Status Submitted
+2018-12-17 03:22:30: Order ref: 76 / Type Sell / Status Accepted
+2018-12-17 03:22:50: Order ref: 76 / Type Sell / Status Completed
+2018-12-17T03:22:50, SELL EXECUTED, Size: -1.00, Ref: 76,Price: 2606.50000, Cost: 50.00000
+2018-12-17T03:22:50, OPERATION PROFIT, GROSS 50.00000, NET 48.30000
+2019-01-14 20:42:19  : Oref 77 / Buy Stop 1 at 2597.75000
+2019-01-14 20:42:19  : Oref 78 / Sell Stop -1 at 2593.75000
+2019-01-14 20:42:20: Order ref: 77 / Type Buy / Status Submitted
+2019-01-14 20:42:20: Order ref: 78 / Type Sell / Status Submitted
+2019-01-14 20:42:20: Order ref: 77 / Type Buy / Status Accepted
+2019-01-14 20:42:20: Order ref: 78 / Type Sell / Status Accepted
+2019-01-14 20:51:53: Order ref: 78 / Type Sell / Status Completed
+2019-01-14T20:51:53, SELL EXECUTED, Size: -1.00, Ref: 78,Price: 2593.75000, Cost: 50.00000
+2019-01-14 20:51:53: Order ref: 77 / Type Buy / Status Canceled
+2019-01-14T20:51:53, Canceled ,
+2019-01-14 20:51:53  : Oref 79 / Buy Stop 3 at 2597.75000
+2019-01-14 20:51:56: Order ref: 79 / Type Buy / Status Submitted
+2019-01-14 20:51:56: Order ref: 79 / Type Buy / Status Accepted
+2019-01-14 22:09:51: Order ref: 79 / Type Buy / Status Completed
+2019-01-14T22:09:51, BUY EXECUTED, Size: 3.00, Ref: 79, Price: 2597.75000, Cost: 150.00000
+2019-01-14T22:09:51, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2019-01-14 22:09:51  : Oref 80 / Sell Stop -6 at 2589.75000
+2019-01-14 22:09:52: Order ref: 80 / Type Sell / Status Submitted
+2019-01-14 22:09:52: Order ref: 80 / Type Sell / Status Accepted
+2019-01-15 00:56:38: Order ref: 81 / Type Sell / Status Submitted
+2019-01-15 00:56:38: Order ref: 80 / Type Sell / Status Canceled
+2019-01-15T00:56:38, Canceled ,
+2019-01-15 00:56:38: Order ref: 81 / Type Sell / Status Accepted
+2019-01-15 00:56:38: Order ref: 81 / Type Sell / Status Completed
+2019-01-15T00:56:38, SELL EXECUTED, Size: -2.00, Ref: 81,Price: 2600.00000, Cost: 100.00000
+2019-01-15T00:56:38, OPERATION PROFIT, GROSS 225.00000, NET 221.60000
+2019-01-15 02:30:42  : Oref 82 / Buy Stop 1 at 2597.25000
+2019-01-15 02:30:42  : Oref 83 / Sell Stop -1 at 2593.25000
+2019-01-15 02:30:45: Order ref: 82 / Type Buy / Status Submitted
+2019-01-15 02:30:45: Order ref: 83 / Type Sell / Status Submitted
+2019-01-15 02:30:45: Order ref: 82 / Type Buy / Status Accepted
+2019-01-15 02:30:45: Order ref: 83 / Type Sell / Status Accepted
+2019-01-15 02:41:52: Order ref: 83 / Type Sell / Status Completed
+2019-01-15T02:41:52, SELL EXECUTED, Size: -1.00, Ref: 83,Price: 2593.25000, Cost: 50.00000
+2019-01-15 02:41:52: Order ref: 82 / Type Buy / Status Canceled
+2019-01-15T02:41:52, Canceled ,
+2019-01-15 02:41:52  : Oref 84 / Buy Stop 3 at 2597.25000
+2019-01-15 02:41:53: Order ref: 84 / Type Buy / Status Submitted
+2019-01-15 02:41:53: Order ref: 84 / Type Buy / Status Accepted
+2019-01-15 03:09:51: Order ref: 84 / Type Buy / Status Completed
+2019-01-15T03:09:51, BUY EXECUTED, Size: 3.00, Ref: 84, Price: 2597.25000, Cost: 150.00000
+2019-01-15T03:09:51, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2019-01-15 03:09:51  : Oref 85 / Sell Stop -6 at 2589.25000
+2019-01-15 03:09:55: Order ref: 85 / Type Sell / Status Submitted
+2019-01-15 03:09:55: Order ref: 85 / Type Sell / Status Accepted
+2019-01-15 04:00:57: Order ref: 85 / Type Sell / Status Completed
+2019-01-15T04:00:57, SELL EXECUTED, Size: -6.00, Ref: 85,Price: 2589.25000, Cost: 300.00000
+2019-01-15T04:00:57, OPERATION PROFIT, GROSS -800.00000, NET -803.40000
+800.0
+2019-01-15 04:00:57  : Oref 86 / Buy Stop 12 at 2597.25000
+2019-01-15 04:00:58: Order ref: 86 / Type Buy / Status Submitted
+2019-01-15 04:00:58: Order ref: 86 / Type Buy / Status Accepted
+2019-01-15 06:56:13: Order ref: 87 / Type Buy / Status Submitted
+2019-01-15 06:56:13: Order ref: 86 / Type Buy / Status Canceled
+2019-01-15T06:56:13, Canceled ,
+2019-01-15 06:56:13: Order ref: 87 / Type Buy / Status Accepted
+2019-01-15 06:56:13: Order ref: 87 / Type Buy / Status Completed
+2019-01-15T06:56:13, BUY EXECUTED, Size: 4.00, Ref: 87, Price: 2582.50000, Cost: 200.00000
+2019-01-15T06:56:13, OPERATION PROFIT, GROSS 1350.00000, NET 1343.20000
+2019-01-15 09:39:21  : Oref 88 / Buy Stop 1 at 2597.75000
+2019-01-15 09:39:21  : Oref 89 / Sell Stop -1 at 2593.75000
+2019-01-15 09:39:22: Order ref: 88 / Type Buy / Status Submitted
+2019-01-15 09:39:22: Order ref: 89 / Type Sell / Status Submitted
+2019-01-15 09:39:22: Order ref: 88 / Type Buy / Status Accepted
+2019-01-15 09:39:22: Order ref: 89 / Type Sell / Status Accepted
+2019-01-15 09:43:18: Order ref: 88 / Type Buy / Status Completed
+2019-01-15T09:43:18, BUY EXECUTED, Size: 1.00, Ref: 88, Price: 2597.75000, Cost: 50.00000
+2019-01-15 09:43:18: Order ref: 89 / Type Sell / Status Canceled
+2019-01-15T09:43:18, Canceled ,
+2019-01-15 09:43:18  : Oref 90 / Sell Stop -3 at 2593.75000
+2019-01-15 09:43:19: Order ref: 90 / Type Sell / Status Submitted
+2019-01-15 09:43:19: Order ref: 90 / Type Sell / Status Accepted
+2019-01-15 09:50:45: Order ref: 90 / Type Sell / Status Canceled
+2019-01-15T09:50:45, Canceled ,
+2019-01-15 09:50:45: Order ref: 91 / Type Sell / Status Submitted
+2019-01-15 09:50:45: Order ref: 91 / Type Sell / Status Accepted
+2019-01-15 09:51:50: Order ref: 91 / Type Sell / Status Completed
+2019-01-15T09:51:50, SELL EXECUTED, Size: -1.00, Ref: 91,Price: 2598.25000, Cost: 50.00000
+2019-01-15T09:51:50, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2019-02-11 16:30:00  : Oref 92 / Buy Stop 1 at 2710.75000
+2019-02-11 16:30:00  : Oref 93 / Sell Stop -1 at 2706.75000
+2019-02-11 16:30:01: Order ref: 92 / Type Buy / Status Submitted
+2019-02-11 16:30:01: Order ref: 93 / Type Sell / Status Submitted
+2019-02-11 16:30:01: Order ref: 92 / Type Buy / Status Accepted
+2019-02-11 16:30:01: Order ref: 93 / Type Sell / Status Accepted
+2019-02-11 18:00:01: Order ref: 93 / Type Sell / Status Completed
+2019-02-11T18:00:01, SELL EXECUTED, Size: -1.00, Ref: 93,Price: 2706.75000, Cost: 50.00000
+2019-02-11 18:00:01: Order ref: 92 / Type Buy / Status Canceled
+2019-02-11T18:00:01, Canceled ,
+2019-02-11 18:00:01  : Oref 94 / Buy Stop 3 at 2710.75000
+2019-02-11 18:00:02: Order ref: 94 / Type Buy / Status Submitted
+2019-02-11 18:00:02: Order ref: 94 / Type Buy / Status Accepted
+2019-02-11 19:10:00: Order ref: 94 / Type Buy / Status Completed
+2019-02-11T19:10:00, BUY EXECUTED, Size: 3.00, Ref: 94, Price: 2710.75000, Cost: 150.00000
+2019-02-11T19:10:00, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2019-02-11 19:10:00  : Oref 95 / Sell Stop -6 at 2702.75000
+2019-02-11 19:10:01: Order ref: 95 / Type Sell / Status Submitted
+2019-02-11 19:10:01: Order ref: 95 / Type Sell / Status Accepted
+2019-02-11 19:31:50: Order ref: 96 / Type Sell / Status Submitted
+2019-02-11 19:31:50: Order ref: 95 / Type Sell / Status Canceled
+2019-02-11T19:31:50, Canceled ,
+2019-02-11 19:31:50: Order ref: 96 / Type Sell / Status Accepted
+2019-02-11 19:31:50: Order ref: 96 / Type Sell / Status Completed
+2019-02-11T19:31:50, SELL EXECUTED, Size: -2.00, Ref: 96,Price: 2713.50000, Cost: 100.00000
+2019-02-11T19:31:50, OPERATION PROFIT, GROSS 275.00000, NET 271.60000
+2019-02-13 16:30:00  : Oref 97 / Buy Stop 1 at 2751.75000
+2019-02-13 16:30:00  : Oref 98 / Sell Stop -1 at 2747.75000
+2019-02-13 16:30:01: Order ref: 97 / Type Buy / Status Submitted
+2019-02-13 16:30:01: Order ref: 98 / Type Sell / Status Submitted
+2019-02-13 16:30:01: Order ref: 97 / Type Buy / Status Accepted
+2019-02-13 16:30:01: Order ref: 98 / Type Sell / Status Accepted
+2019-02-13 18:01:01: Order ref: 98 / Type Sell / Status Completed
+2019-02-13T18:01:01, SELL EXECUTED, Size: -1.00, Ref: 98,Price: 2747.75000, Cost: 50.00000
+2019-02-13 18:01:01: Order ref: 97 / Type Buy / Status Canceled
+2019-02-13T18:01:01, Canceled ,
+2019-02-13 18:01:01  : Oref 99 / Buy Stop 3 at 2751.75000
+2019-02-13 18:01:02: Order ref: 99 / Type Buy / Status Submitted
+2019-02-13 18:01:02: Order ref: 99 / Type Buy / Status Accepted
+2019-02-13 19:02:50: Order ref: 99 / Type Buy / Status Completed
+2019-02-13T19:02:50, BUY EXECUTED, Size: 3.00, Ref: 99, Price: 2751.75000, Cost: 150.00000
+2019-02-13T19:02:50, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2019-02-13 19:02:50  : Oref 100 / Sell Stop -6 at 2743.75000
+2019-02-13 19:02:52: Order ref: 100 / Type Sell / Status Submitted
+2019-02-13 19:02:52: Order ref: 100 / Type Sell / Status Accepted
+2019-02-13 22:50:49: Order ref: 101 / Type Sell / Status Submitted
+2019-02-13 22:50:49: Order ref: 100 / Type Sell / Status Canceled
+2019-02-13T22:50:49, Canceled ,
+2019-02-13 22:50:49: Order ref: 101 / Type Sell / Status Accepted
+2019-02-13 22:50:49: Order ref: 101 / Type Sell / Status Completed
+2019-02-13T22:50:49, SELL EXECUTED, Size: -2.00, Ref: 101,Price: 2754.25000, Cost: 100.00000
+2019-02-13T22:50:49, OPERATION PROFIT, GROSS 250.00000, NET 246.60000
+2019-02-14 08:36:56  : Oref 102 / Buy Stop 1 at 2753.75000
+2019-02-14 08:36:56  : Oref 103 / Sell Stop -1 at 2749.75000
+2019-02-14 08:36:57: Order ref: 102 / Type Buy / Status Submitted
+2019-02-14 08:36:57: Order ref: 103 / Type Sell / Status Submitted
+2019-02-14 08:36:57: Order ref: 102 / Type Buy / Status Accepted
+2019-02-14 08:36:57: Order ref: 103 / Type Sell / Status Accepted
+2019-02-14 08:42:47: Order ref: 103 / Type Sell / Status Completed
+2019-02-14T08:42:47, SELL EXECUTED, Size: -1.00, Ref: 103,Price: 2749.75000, Cost: 50.00000
+2019-02-14 08:42:47: Order ref: 102 / Type Buy / Status Canceled
+2019-02-14T08:42:47, Canceled ,
+2019-02-14 08:42:47  : Oref 104 / Buy Stop 3 at 2753.75000
+2019-02-14 08:42:48: Order ref: 104 / Type Buy / Status Submitted
+2019-02-14 08:42:48: Order ref: 104 / Type Buy / Status Accepted
+2019-02-14 08:44:49: Order ref: 104 / Type Buy / Status Canceled
+2019-02-14T08:44:49, Canceled ,
+2019-02-14 08:44:49: Order ref: 105 / Type Buy / Status Submitted
+2019-02-14 08:44:49: Order ref: 105 / Type Buy / Status Accepted
+2019-02-14 08:46:24: Order ref: 105 / Type Buy / Status Completed
+2019-02-14T08:46:24, BUY EXECUTED, Size: 1.00, Ref: 105, Price: 2749.25000, Cost: 50.00000
+2019-02-14T08:46:24, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2019-02-25 20:28:03  : Oref 106 / Buy Stop 1 at 2794.25000
+2019-02-25 20:28:03  : Oref 107 / Sell Stop -1 at 2790.25000
+2019-02-25 20:28:05: Order ref: 106 / Type Buy / Status Submitted
+2019-02-25 20:28:05: Order ref: 107 / Type Sell / Status Submitted
+2019-02-25 20:28:05: Order ref: 106 / Type Buy / Status Accepted
+2019-02-25 20:28:05: Order ref: 107 / Type Sell / Status Accepted
+2019-02-25 20:29:58: Order ref: 107 / Type Sell / Status Completed
+2019-02-25T20:29:58, SELL EXECUTED, Size: -1.00, Ref: 107,Price: 2790.25000, Cost: 50.00000
+2019-02-25 20:29:58: Order ref: 106 / Type Buy / Status Canceled
+2019-02-25T20:29:58, Canceled ,
+2019-02-25 20:29:58  : Oref 108 / Buy Stop 3 at 2794.25000
+2019-02-25 20:29:59: Order ref: 108 / Type Buy / Status Submitted
+2019-02-25 20:29:59: Order ref: 108 / Type Buy / Status Accepted
+2019-02-25 20:30:02: Order ref: 108 / Type Buy / Status Canceled
+2019-02-25T20:30:02, Canceled ,
+2019-02-25 20:30:02: Order ref: 109 / Type Buy / Status Submitted
+2019-02-25 20:30:02: Order ref: 109 / Type Buy / Status Accepted
+2019-02-26 02:21:16: Order ref: 109 / Type Buy / Status Completed
+2019-02-26T02:21:16, BUY EXECUTED, Size: 1.00, Ref: 109, Price: 2789.50000, Cost: 50.00000
+2019-02-26T02:21:16, OPERATION PROFIT, GROSS 37.50000, NET 35.80000
+2019-03-25 11:29:36  : Oref 110 / Buy Stop 1 at 2817.25000
+2019-03-25 11:29:36  : Oref 111 / Sell Stop -1 at 2813.25000
+2019-03-25 11:29:37: Order ref: 110 / Type Buy / Status Submitted
+2019-03-25 11:29:37: Order ref: 111 / Type Sell / Status Submitted
+2019-03-25 11:29:37: Order ref: 110 / Type Buy / Status Accepted
+2019-03-25 11:29:37: Order ref: 111 / Type Sell / Status Accepted
+2019-03-25 11:30:06: Order ref: 111 / Type Sell / Status Completed
+2019-03-25T11:30:06, SELL EXECUTED, Size: -1.00, Ref: 111,Price: 2813.25000, Cost: 50.00000
+2019-03-25 11:30:06: Order ref: 110 / Type Buy / Status Canceled
+2019-03-25T11:30:06, Canceled ,
+2019-03-25 11:30:06  : Oref 112 / Buy Stop 3 at 2817.25000
+2019-03-25 11:30:07: Order ref: 112 / Type Buy / Status Submitted
+2019-03-25 11:30:07: Order ref: 112 / Type Buy / Status Accepted
+2019-03-25 11:33:34: Order ref: 112 / Type Buy / Status Canceled
+2019-03-25T11:33:34, Canceled ,
+2019-03-25 11:33:34: Order ref: 113 / Type Buy / Status Submitted
+2019-03-25 11:33:34: Order ref: 113 / Type Buy / Status Accepted
+2019-03-25 11:49:02: Order ref: 114 / Type Buy / Status Submitted
+2019-03-25 11:49:02: Order ref: 113 / Type Buy / Status Canceled
+2019-03-25T11:49:02, Canceled ,
+2019-03-25 11:49:02: Order ref: 114 / Type Buy / Status Accepted
+2019-03-25 11:49:02: Order ref: 114 / Type Buy / Status Completed
+2019-03-25T11:49:02, BUY EXECUTED, Size: 1.00, Ref: 114, Price: 2805.25000, Cost: 50.00000
+2019-03-25T11:49:02, OPERATION PROFIT, GROSS 400.00000, NET 398.30000
+2019-03-25 16:30:00  : Oref 115 / Buy Stop 1 at 2809.50000
+2019-03-25 16:30:00  : Oref 116 / Sell Stop -1 at 2805.50000
+2019-03-25 16:30:01: Order ref: 115 / Type Buy / Status Submitted
+2019-03-25 16:30:01: Order ref: 116 / Type Sell / Status Submitted
+2019-03-25 16:30:01: Order ref: 115 / Type Buy / Status Accepted
+2019-03-25 16:30:01: Order ref: 116 / Type Sell / Status Accepted
+2019-03-25 19:54:22: Order ref: 115 / Type Buy / Status Completed
+2019-03-25T19:54:22, BUY EXECUTED, Size: 1.00, Ref: 115, Price: 2809.50000, Cost: 50.00000
+2019-03-25 19:54:22: Order ref: 116 / Type Sell / Status Canceled
+2019-03-25T19:54:22, Canceled ,
+2019-03-25 19:54:22  : Oref 117 / Sell Stop -3 at 2805.50000
+2019-03-25 19:54:23: Order ref: 117 / Type Sell / Status Submitted
+2019-03-25 19:54:23: Order ref: 117 / Type Sell / Status Accepted
+2019-03-25 19:56:33: Order ref: 117 / Type Sell / Status Canceled
+2019-03-25T19:56:33, Canceled ,
+2019-03-25 19:56:33: Order ref: 118 / Type Sell / Status Submitted
+2019-03-25 19:56:33: Order ref: 118 / Type Sell / Status Accepted
+2019-03-25 19:59:57: Order ref: 118 / Type Sell / Status Completed
+2019-03-25T19:59:57, SELL EXECUTED, Size: -1.00, Ref: 118,Price: 2810.00000, Cost: 50.00000
+2019-03-25T19:59:57, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2019-04-14 21:14:44  : Oref 119 / Buy Stop 1 at 2912.00000
+2019-04-14 21:14:44  : Oref 120 / Sell Stop -1 at 2908.00000
+2019-04-14 21:14:45: Order ref: 119 / Type Buy / Status Submitted
+2019-04-14 21:14:45: Order ref: 120 / Type Sell / Status Submitted
+2019-04-14 21:14:45: Order ref: 119 / Type Buy / Status Accepted
+2019-04-14 21:14:45: Order ref: 120 / Type Sell / Status Accepted
+2019-04-14 22:09:57: Order ref: 119 / Type Buy / Status Completed
+2019-04-14T22:09:57, BUY EXECUTED, Size: 1.00, Ref: 119, Price: 2912.00000, Cost: 50.00000
+2019-04-14 22:09:57: Order ref: 120 / Type Sell / Status Canceled
+2019-04-14T22:09:57, Canceled ,
+2019-04-14 22:09:57  : Oref 121 / Sell Stop -3 at 2908.00000
+2019-04-14 22:09:58: Order ref: 121 / Type Sell / Status Submitted
+2019-04-14 22:09:58: Order ref: 121 / Type Sell / Status Accepted
+2019-04-15 05:34:58: Order ref: 121 / Type Sell / Status Canceled
+2019-04-15T05:34:58, Canceled ,
+2019-04-15 05:34:58: Order ref: 122 / Type Sell / Status Submitted
+2019-04-15 05:34:58: Order ref: 122 / Type Sell / Status Accepted
+2019-04-15 06:09:20: Order ref: 122 / Type Sell / Status Completed
+2019-04-15T06:09:20, SELL EXECUTED, Size: -1.00, Ref: 122,Price: 2912.50000, Cost: 50.00000
+2019-04-15T06:09:20, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2019-05-07 21:17:10  : Oref 123 / Buy Stop 1 at 2893.00000
+2019-05-07 21:17:10  : Oref 124 / Sell Stop -1 at 2889.00000
+2019-05-07 21:17:11: Order ref: 123 / Type Buy / Status Submitted
+2019-05-07 21:17:11: Order ref: 124 / Type Sell / Status Submitted
+2019-05-07 21:17:11: Order ref: 123 / Type Buy / Status Accepted
+2019-05-07 21:17:11: Order ref: 124 / Type Sell / Status Accepted
+2019-05-07 21:42:00: Order ref: 123 / Type Buy / Status Completed
+2019-05-07T21:42:00, BUY EXECUTED, Size: 1.00, Ref: 123, Price: 2893.00000, Cost: 50.00000
+2019-05-07 21:42:00: Order ref: 124 / Type Sell / Status Canceled
+2019-05-07T21:42:00, Canceled ,
+2019-05-07 21:42:00  : Oref 125 / Sell Stop -3 at 2889.00000
+2019-05-07 21:42:01: Order ref: 125 / Type Sell / Status Submitted
+2019-05-07 21:42:01: Order ref: 125 / Type Sell / Status Accepted
+2019-05-07 22:02:03: Order ref: 125 / Type Sell / Status Canceled
+2019-05-07T22:02:03, Canceled ,
+2019-05-07 22:02:03: Order ref: 126 / Type Sell / Status Submitted
+2019-05-07 22:02:03: Order ref: 126 / Type Sell / Status Accepted
+2019-05-07 22:05:47: Order ref: 126 / Type Sell / Status Completed
+2019-05-07T22:05:47, SELL EXECUTED, Size: -1.00, Ref: 126,Price: 2893.50000, Cost: 50.00000
+2019-05-07T22:05:47, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2019-05-13 16:30:03  : Oref 127 / Buy Stop 1 at 2809.75000
+2019-05-13 16:30:03  : Oref 128 / Sell Stop -1 at 2805.75000
+2019-05-13 16:30:04: Order ref: 127 / Type Buy / Status Submitted
+2019-05-13 16:30:04: Order ref: 128 / Type Sell / Status Submitted
+2019-05-13 16:30:04: Order ref: 127 / Type Buy / Status Accepted
+2019-05-13 16:30:04: Order ref: 128 / Type Sell / Status Accepted
+2019-05-13 16:32:33: Order ref: 128 / Type Sell / Status Completed
+2019-05-13T16:32:33, SELL EXECUTED, Size: -1.00, Ref: 128,Price: 2805.75000, Cost: 50.00000
+2019-05-13 16:32:33: Order ref: 127 / Type Buy / Status Canceled
+2019-05-13T16:32:33, Canceled ,
+2019-05-13 16:32:33  : Oref 129 / Buy Stop 3 at 2809.75000
+2019-05-13 16:32:34: Order ref: 129 / Type Buy / Status Submitted
+2019-05-13 16:32:34: Order ref: 129 / Type Buy / Status Accepted
+2019-05-13 18:01:29: Order ref: 129 / Type Buy / Status Canceled
+2019-05-13T18:01:29, Canceled ,
+2019-05-13 18:01:29: Order ref: 130 / Type Buy / Status Submitted
+2019-05-13 18:01:29: Order ref: 130 / Type Buy / Status Accepted
+2019-05-13 18:01:30: Order ref: 130 / Type Buy / Status Completed
+2019-05-13T18:01:30, BUY EXECUTED, Size: 1.00, Ref: 130, Price: 2801.75000, Cost: 50.00000
+2019-05-13T18:01:30, OPERATION PROFIT, GROSS 200.00000, NET 198.30000
+2019-05-20 04:51:29  : Oref 131 / Buy Stop 1 at 2863.00000
+2019-05-20 04:51:29  : Oref 132 / Sell Stop -1 at 2859.00000
+2019-05-20 04:51:30: Order ref: 131 / Type Buy / Status Submitted
+2019-05-20 04:51:30: Order ref: 132 / Type Sell / Status Submitted
+2019-05-20 04:51:30: Order ref: 131 / Type Buy / Status Accepted
+2019-05-20 04:51:30: Order ref: 132 / Type Sell / Status Accepted
+2019-05-20 04:53:24: Order ref: 132 / Type Sell / Status Completed
+2019-05-20T04:53:24, SELL EXECUTED, Size: -1.00, Ref: 132,Price: 2859.00000, Cost: 50.00000
+2019-05-20 04:53:24: Order ref: 131 / Type Buy / Status Canceled
+2019-05-20T04:53:24, Canceled ,
+2019-05-20 04:53:24  : Oref 133 / Buy Stop 3 at 2863.00000
+2019-05-20 04:53:25: Order ref: 133 / Type Buy / Status Submitted
+2019-05-20 04:53:25: Order ref: 133 / Type Buy / Status Accepted
+2019-05-20 04:55:06: Order ref: 133 / Type Buy / Status Canceled
+2019-05-20T04:55:06, Canceled ,
+2019-05-20 04:55:06: Order ref: 134 / Type Buy / Status Submitted
+2019-05-20 04:55:06: Order ref: 134 / Type Buy / Status Accepted
+2019-05-20 05:00:57: Order ref: 134 / Type Buy / Status Completed
+2019-05-20T05:00:57, BUY EXECUTED, Size: 1.00, Ref: 134, Price: 2858.50000, Cost: 50.00000
+2019-05-20T05:00:57, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2019-06-03 09:31:12  : Oref 135 / Buy Stop 1 at 2755.25000
+2019-06-03 09:31:12  : Oref 136 / Sell Stop -1 at 2751.25000
+2019-06-03 09:31:13: Order ref: 135 / Type Buy / Status Submitted
+2019-06-03 09:31:13: Order ref: 136 / Type Sell / Status Submitted
+2019-06-03 09:31:13: Order ref: 135 / Type Buy / Status Accepted
+2019-06-03 09:31:13: Order ref: 136 / Type Sell / Status Accepted
+2019-06-03 09:31:21: Order ref: 135 / Type Buy / Status Completed
+2019-06-03T09:31:21, BUY EXECUTED, Size: 1.00, Ref: 135, Price: 2755.25000, Cost: 50.00000
+2019-06-03 09:31:21: Order ref: 136 / Type Sell / Status Canceled
+2019-06-03T09:31:21, Canceled ,
+2019-06-03 09:31:21  : Oref 137 / Sell Stop -3 at 2751.25000
+2019-06-03 09:31:22: Order ref: 137 / Type Sell / Status Submitted
+2019-06-03 09:31:22: Order ref: 137 / Type Sell / Status Accepted
+2019-06-03 09:33:29: Order ref: 137 / Type Sell / Status Canceled
+2019-06-03T09:33:29, Canceled ,
+2019-06-03 09:33:29: Order ref: 138 / Type Sell / Status Submitted
+2019-06-03 09:33:29: Order ref: 138 / Type Sell / Status Accepted
+2019-06-03 09:45:01: Order ref: 138 / Type Sell / Status Completed
+2019-06-03T09:45:01, SELL EXECUTED, Size: -1.00, Ref: 138,Price: 2755.75000, Cost: 50.00000
+2019-06-03T09:45:01, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2019-07-01 13:13:12  : Oref 139 / Buy Stop 1 at 2960.25000
+2019-07-01 13:13:12  : Oref 140 / Sell Stop -1 at 2956.25000
+2019-07-01 13:13:13: Order ref: 139 / Type Buy / Status Submitted
+2019-07-01 13:13:13: Order ref: 140 / Type Sell / Status Submitted
+2019-07-01 13:13:13: Order ref: 139 / Type Buy / Status Accepted
+2019-07-01 13:13:13: Order ref: 140 / Type Sell / Status Accepted
+2019-07-01 13:28:59: Order ref: 139 / Type Buy / Status Completed
+2019-07-01T13:28:59, BUY EXECUTED, Size: 1.00, Ref: 139, Price: 2960.25000, Cost: 50.00000
+2019-07-01 13:28:59: Order ref: 140 / Type Sell / Status Canceled
+2019-07-01T13:28:59, Canceled ,
+2019-07-01 13:28:59  : Oref 141 / Sell Stop -3 at 2956.25000
+2019-07-01 13:29:00: Order ref: 141 / Type Sell / Status Submitted
+2019-07-01 13:29:00: Order ref: 141 / Type Sell / Status Accepted
+2019-07-01 14:28:07: Order ref: 141 / Type Sell / Status Completed
+2019-07-01T14:28:07, SELL EXECUTED, Size: -3.00, Ref: 141,Price: 2956.25000, Cost: 150.00000
+2019-07-01T14:28:07, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2019-07-01 14:28:07  : Oref 142 / Buy Stop 6 at 2964.25000
+2019-07-01 14:28:08: Order ref: 142 / Type Buy / Status Submitted
+2019-07-01 14:28:08: Order ref: 142 / Type Buy / Status Accepted
+2019-07-01 15:24:14: Order ref: 142 / Type Buy / Status Completed
+2019-07-01T15:24:14, BUY EXECUTED, Size: 6.00, Ref: 142, Price: 2964.25000, Cost: 300.00000
+2019-07-01T15:24:14, OPERATION PROFIT, GROSS -800.00000, NET -803.40000
+800.0
+2019-07-01 15:24:14  : Oref 143 / Sell Stop -12 at 2956.25000
+2019-07-01 15:24:15: Order ref: 143 / Type Sell / Status Submitted
+2019-07-01 15:24:15: Order ref: 143 / Type Sell / Status Accepted
+2019-07-01 15:55:04: Order ref: 144 / Type Sell / Status Submitted
+2019-07-01 15:55:04: Order ref: 143 / Type Sell / Status Canceled
+2019-07-01T15:55:04, Canceled ,
+2019-07-01 15:55:04: Order ref: 144 / Type Sell / Status Accepted
+2019-07-01 15:55:04: Order ref: 144 / Type Sell / Status Completed
+2019-07-01T15:55:04, SELL EXECUTED, Size: -4.00, Ref: 144,Price: 2969.50000, Cost: 200.00000
+2019-07-01T15:55:04, OPERATION PROFIT, GROSS 1050.00000, NET 1043.20000
+2019-07-07 18:00:00  : Oref 145 / Buy Stop 1 at 2993.00000
+2019-07-07 18:00:00  : Oref 146 / Sell Stop -1 at 2989.00000
+2019-07-07 18:00:01: Order ref: 145 / Type Buy / Status Submitted
+2019-07-07 18:00:01: Order ref: 146 / Type Sell / Status Submitted
+2019-07-07 18:00:01: Order ref: 145 / Type Buy / Status Accepted
+2019-07-07 18:00:01: Order ref: 146 / Type Sell / Status Accepted
+2019-07-07 18:00:03: Order ref: 145 / Type Buy / Status Completed
+2019-07-07T18:00:03, BUY EXECUTED, Size: 1.00, Ref: 145, Price: 2993.00000, Cost: 50.00000
+2019-07-07 18:00:03: Order ref: 146 / Type Sell / Status Canceled
+2019-07-07T18:00:03, Canceled ,
+2019-07-07 18:00:03  : Oref 147 / Sell Stop -3 at 2989.00000
+2019-07-07 18:00:04: Order ref: 147 / Type Sell / Status Submitted
+2019-07-07 18:00:04: Order ref: 147 / Type Sell / Status Accepted
+2019-07-07 19:54:00: Order ref: 147 / Type Sell / Status Completed
+2019-07-07T19:54:00, SELL EXECUTED, Size: -3.00, Ref: 147,Price: 2989.00000, Cost: 150.00000
+2019-07-07T19:54:00, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2019-07-07 19:54:00  : Oref 148 / Buy Stop 6 at 2997.00000
+2019-07-07 19:54:02: Order ref: 148 / Type Buy / Status Submitted
+2019-07-07 19:54:02: Order ref: 148 / Type Buy / Status Accepted
+2019-07-07 20:48:14: Order ref: 149 / Type Buy / Status Submitted
+2019-07-07 20:48:14: Order ref: 148 / Type Buy / Status Canceled
+2019-07-07T20:48:14, Canceled ,
+2019-07-07 20:48:14: Order ref: 149 / Type Buy / Status Accepted
+2019-07-07 20:48:14: Order ref: 149 / Type Buy / Status Completed
+2019-07-07T20:48:14, BUY EXECUTED, Size: 2.00, Ref: 149, Price: 2986.75000, Cost: 100.00000
+2019-07-07T20:48:14, OPERATION PROFIT, GROSS 225.00000, NET 221.60000
+2019-07-09 16:30:00  : Oref 150 / Buy Stop 1 at 2984.25000
+2019-07-09 16:30:00  : Oref 151 / Sell Stop -1 at 2980.25000
+2019-07-09 16:30:01: Order ref: 150 / Type Buy / Status Submitted
+2019-07-09 16:30:01: Order ref: 151 / Type Sell / Status Submitted
+2019-07-09 16:30:01: Order ref: 150 / Type Buy / Status Accepted
+2019-07-09 16:30:01: Order ref: 151 / Type Sell / Status Accepted
+2019-07-09 19:48:15: Order ref: 151 / Type Sell / Status Completed
+2019-07-09T19:48:15, SELL EXECUTED, Size: -1.00, Ref: 151,Price: 2980.25000, Cost: 50.00000
+2019-07-09 19:48:15: Order ref: 150 / Type Buy / Status Canceled
+2019-07-09T19:48:15, Canceled ,
+2019-07-09 19:48:15  : Oref 152 / Buy Stop 3 at 2984.25000
+2019-07-09 19:48:22: Order ref: 152 / Type Buy / Status Submitted
+2019-07-09 19:48:22: Order ref: 152 / Type Buy / Status Accepted
+2019-07-09 20:04:34: Order ref: 152 / Type Buy / Status Completed
+2019-07-09T20:04:34, BUY EXECUTED, Size: 3.00, Ref: 152, Price: 2984.25000, Cost: 150.00000
+2019-07-09T20:04:34, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2019-07-09 20:04:34  : Oref 153 / Sell Stop -6 at 2976.25000
+2019-07-09 20:04:35: Order ref: 153 / Type Sell / Status Submitted
+2019-07-09 20:04:35: Order ref: 153 / Type Sell / Status Accepted
+2019-07-09 20:54:08: Order ref: 154 / Type Sell / Status Submitted
+2019-07-09 20:54:08: Order ref: 153 / Type Sell / Status Canceled
+2019-07-09T20:54:08, Canceled ,
+2019-07-09 20:54:08: Order ref: 154 / Type Sell / Status Accepted
+2019-07-09 20:54:08: Order ref: 154 / Type Sell / Status Completed
+2019-07-09T20:54:08, SELL EXECUTED, Size: -2.00, Ref: 154,Price: 2987.00000, Cost: 100.00000
+2019-07-09T20:54:08, OPERATION PROFIT, GROSS 275.00000, NET 271.60000
+2019-07-10 02:01:53  : Oref 155 / Buy Stop 1 at 2980.75000
+2019-07-10 02:01:53  : Oref 156 / Sell Stop -1 at 2976.75000
+2019-07-10 02:01:54: Order ref: 155 / Type Buy / Status Submitted
+2019-07-10 02:01:54: Order ref: 156 / Type Sell / Status Submitted
+2019-07-10 02:01:54: Order ref: 155 / Type Buy / Status Accepted
+2019-07-10 02:01:54: Order ref: 156 / Type Sell / Status Accepted
+2019-07-10 02:20:10: Order ref: 156 / Type Sell / Status Completed
+2019-07-10T02:20:10, SELL EXECUTED, Size: -1.00, Ref: 156,Price: 2976.75000, Cost: 50.00000
+2019-07-10 02:20:10: Order ref: 155 / Type Buy / Status Canceled
+2019-07-10T02:20:10, Canceled ,
+2019-07-10 02:20:10  : Oref 157 / Buy Stop 3 at 2980.75000
+2019-07-10 02:20:13: Order ref: 157 / Type Buy / Status Submitted
+2019-07-10 02:20:13: Order ref: 157 / Type Buy / Status Accepted
+2019-07-10 02:43:31: Order ref: 157 / Type Buy / Status Canceled
+2019-07-10T02:43:31, Canceled ,
+2019-07-10 02:43:31: Order ref: 158 / Type Buy / Status Submitted
+2019-07-10 02:43:31: Order ref: 158 / Type Buy / Status Accepted
+2019-07-10 02:50:25: Order ref: 158 / Type Buy / Status Completed
+2019-07-10T02:50:25, BUY EXECUTED, Size: 1.00, Ref: 158, Price: 2976.00000, Cost: 50.00000
+2019-07-10T02:50:25, OPERATION PROFIT, GROSS 37.50000, NET 35.80000
+2019-07-21 19:53:09  : Oref 159 / Buy Stop 1 at 2982.25000
+2019-07-21 19:53:09  : Oref 160 / Sell Stop -1 at 2978.25000
+2019-07-21 19:53:10: Order ref: 159 / Type Buy / Status Submitted
+2019-07-21 19:53:10: Order ref: 160 / Type Sell / Status Submitted
+2019-07-21 19:53:10: Order ref: 159 / Type Buy / Status Accepted
+2019-07-21 19:53:10: Order ref: 160 / Type Sell / Status Accepted
+2019-07-21 20:03:53: Order ref: 160 / Type Sell / Status Completed
+2019-07-21T20:03:53, SELL EXECUTED, Size: -1.00, Ref: 160,Price: 2978.25000, Cost: 50.00000
+2019-07-21 20:03:53: Order ref: 159 / Type Buy / Status Canceled
+2019-07-21T20:03:53, Canceled ,
+2019-07-21 20:03:53  : Oref 161 / Buy Stop 3 at 2982.25000
+2019-07-21 20:03:55: Order ref: 161 / Type Buy / Status Submitted
+2019-07-21 20:03:55: Order ref: 161 / Type Buy / Status Accepted
+2019-07-21 20:36:58: Order ref: 161 / Type Buy / Status Canceled
+2019-07-21T20:36:58, Canceled ,
+2019-07-21 20:36:58: Order ref: 162 / Type Buy / Status Submitted
+2019-07-21 20:36:58: Order ref: 162 / Type Buy / Status Accepted
+2019-07-21 21:11:28: Order ref: 162 / Type Buy / Status Completed
+2019-07-21T21:11:28, BUY EXECUTED, Size: 1.00, Ref: 162, Price: 2977.75000, Cost: 50.00000
+2019-07-21T21:11:28, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2019-08-04 18:20:36  : Oref 163 / Buy Stop 1 at 2932.00000
+2019-08-04 18:20:36  : Oref 164 / Sell Stop -1 at 2928.00000
+2019-08-04 18:20:37: Order ref: 163 / Type Buy / Status Submitted
+2019-08-04 18:20:37: Order ref: 164 / Type Sell / Status Submitted
+2019-08-04 18:20:37: Order ref: 163 / Type Buy / Status Accepted
+2019-08-04 18:20:37: Order ref: 164 / Type Sell / Status Accepted
+2019-08-04 18:51:39: Order ref: 164 / Type Sell / Status Completed
+2019-08-04T18:51:39, SELL EXECUTED, Size: -1.00, Ref: 164,Price: 2928.00000, Cost: 50.00000
+2019-08-04 18:51:39: Order ref: 163 / Type Buy / Status Canceled
+2019-08-04T18:51:39, Canceled ,
+2019-08-04 18:51:39  : Oref 165 / Buy Stop 3 at 2932.00000
+2019-08-04 18:51:41: Order ref: 165 / Type Buy / Status Submitted
+2019-08-04 18:51:41: Order ref: 165 / Type Buy / Status Accepted
+2019-08-04 19:45:09: Order ref: 165 / Type Buy / Status Canceled
+2019-08-04T19:45:09, Canceled ,
+2019-08-04 19:45:09: Order ref: 166 / Type Buy / Status Submitted
+2019-08-04 19:45:09: Order ref: 166 / Type Buy / Status Accepted
+2019-08-04 19:57:12: Order ref: 166 / Type Buy / Status Completed
+2019-08-04T19:57:12, BUY EXECUTED, Size: 1.00, Ref: 166, Price: 2927.50000, Cost: 50.00000
+2019-08-04T19:57:12, OPERATION PROFIT, GROSS 25.00000, NET 23.30000
+2019-08-20 16:30:00  : Oref 167 / Buy Stop 1 at 2900.75000
+2019-08-20 16:30:00  : Oref 168 / Sell Stop -1 at 2896.75000
+2019-08-20 16:30:01: Order ref: 167 / Type Buy / Status Submitted
+2019-08-20 16:30:01: Order ref: 168 / Type Sell / Status Submitted
+2019-08-20 16:30:01: Order ref: 167 / Type Buy / Status Accepted
+2019-08-20 16:30:01: Order ref: 168 / Type Sell / Status Accepted
+2019-08-20 16:39:34: Order ref: 168 / Type Sell / Status Completed
+2019-08-20T16:39:34, SELL EXECUTED, Size: -1.00, Ref: 168,Price: 2896.75000, Cost: 50.00000
+2019-08-20 16:39:34: Order ref: 167 / Type Buy / Status Canceled
+2019-08-20T16:39:34, Canceled ,
+2019-08-20 16:39:34  : Oref 169 / Buy Stop 3 at 2900.75000
+2019-08-20 16:39:35: Order ref: 169 / Type Buy / Status Submitted
+2019-08-20 16:39:35: Order ref: 169 / Type Buy / Status Accepted
+2019-08-20 16:40:59: Order ref: 169 / Type Buy / Status Canceled
+2019-08-20T16:40:59, Canceled ,
+2019-08-20 16:40:59: Order ref: 170 / Type Buy / Status Submitted
+2019-08-20 16:40:59: Order ref: 170 / Type Buy / Status Accepted
+2019-08-20 16:49:06: Order ref: 170 / Type Buy / Status Completed
+2019-08-20T16:49:06, BUY EXECUTED, Size: 1.00, Ref: 170, Price: 2896.00000, Cost: 50.00000
+2019-08-20T16:49:06, OPERATION PROFIT, GROSS 37.50000, NET 35.80000
+2019-08-26 03:00:03  : Oref 171 / Buy Stop 1 at 2858.25000
+2019-08-26 03:00:03  : Oref 172 / Sell Stop -1 at 2854.25000
+2019-08-26 03:00:04: Order ref: 171 / Type Buy / Status Submitted
+2019-08-26 03:00:04: Order ref: 172 / Type Sell / Status Submitted
+2019-08-26 03:00:04: Order ref: 171 / Type Buy / Status Accepted
+2019-08-26 03:00:04: Order ref: 172 / Type Sell / Status Accepted
+2019-08-26 03:00:16: Order ref: 172 / Type Sell / Status Completed
+2019-08-26T03:00:16, SELL EXECUTED, Size: -1.00, Ref: 172,Price: 2854.25000, Cost: 50.00000
+2019-08-26 03:00:16: Order ref: 171 / Type Buy / Status Canceled
+2019-08-26T03:00:16, Canceled ,
+2019-08-26 03:00:16  : Oref 173 / Buy Stop 3 at 2858.25000
+2019-08-26 03:00:17: Order ref: 173 / Type Buy / Status Submitted
+2019-08-26 03:00:17: Order ref: 173 / Type Buy / Status Accepted
+2019-08-26 03:00:41: Order ref: 173 / Type Buy / Status Completed
+2019-08-26T03:00:41, BUY EXECUTED, Size: 3.00, Ref: 173, Price: 2858.25000, Cost: 150.00000
+2019-08-26T03:00:41, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2019-08-26 03:00:41  : Oref 174 / Sell Stop -6 at 2850.25000
+2019-08-26 03:00:42: Order ref: 174 / Type Sell / Status Submitted
+2019-08-26 03:00:42: Order ref: 174 / Type Sell / Status Accepted
+2019-08-26 03:00:50: Order ref: 175 / Type Sell / Status Submitted
+2019-08-26 03:00:50: Order ref: 174 / Type Sell / Status Canceled
+2019-08-26T03:00:50, Canceled ,
+2019-08-26 03:00:50: Order ref: 175 / Type Sell / Status Accepted
+2019-08-26 03:00:50: Order ref: 175 / Type Sell / Status Completed
+2019-08-26T03:00:50, SELL EXECUTED, Size: -2.00, Ref: 175,Price: 2860.75000, Cost: 100.00000
+2019-08-26T03:00:50, OPERATION PROFIT, GROSS 250.00000, NET 246.60000
+2019-08-26 03:05:54  : Oref 176 / Buy Stop 1 at 2857.50000
+2019-08-26 03:05:54  : Oref 177 / Sell Stop -1 at 2853.50000
+2019-08-26 03:05:55: Order ref: 176 / Type Buy / Status Submitted
+2019-08-26 03:05:55: Order ref: 177 / Type Sell / Status Submitted
+2019-08-26 03:05:55: Order ref: 176 / Type Buy / Status Accepted
+2019-08-26 03:05:55: Order ref: 177 / Type Sell / Status Accepted
+2019-08-26 03:05:57: Order ref: 177 / Type Sell / Status Completed
+2019-08-26T03:05:57, SELL EXECUTED, Size: -1.00, Ref: 177,Price: 2853.50000, Cost: 50.00000
+2019-08-26 03:05:57: Order ref: 176 / Type Buy / Status Canceled
+2019-08-26T03:05:57, Canceled ,
+2019-08-26 03:05:57  : Oref 178 / Buy Stop 3 at 2857.50000
+2019-08-26 03:05:58: Order ref: 178 / Type Buy / Status Submitted
+2019-08-26 03:05:58: Order ref: 178 / Type Buy / Status Accepted
+2019-08-26 03:06:04: Order ref: 178 / Type Buy / Status Completed
+2019-08-26T03:06:04, BUY EXECUTED, Size: 3.00, Ref: 178, Price: 2857.50000, Cost: 150.00000
+2019-08-26T03:06:04, OPERATION PROFIT, GROSS -200.00000, NET -201.70000
+200.0
+2019-08-26 03:06:04  : Oref 179 / Sell Stop -6 at 2849.50000
+2019-08-26 03:06:05: Order ref: 179 / Type Sell / Status Submitted
+2019-08-26 03:06:05: Order ref: 179 / Type Sell / Status Accepted
+2019-08-26 03:09:57: Order ref: 180 / Type Sell / Status Submitted
+2019-08-26 03:09:57: Order ref: 179 / Type Sell / Status Canceled
+2019-08-26T03:09:57, Canceled ,
+2019-08-26 03:09:57: Order ref: 180 / Type Sell / Status Accepted
+2019-08-26 03:09:57: Order ref: 180 / Type Sell / Status Completed
+2019-08-26T03:09:57, SELL EXECUTED, Size: -2.00, Ref: 180,Price: 2860.25000, Cost: 100.00000
+2019-08-26T03:09:57, OPERATION PROFIT, GROSS 275.00000, NET 271.60000
+2019-08-26 10:18:28  : Oref 181 / Buy Stop 1 at 2857.50000
+2019-08-26 10:18:28  : Oref 182 / Sell Stop -1 at 2853.50000
+2019-08-26 10:18:29: Order ref: 181 / Type Buy / Status Submitted
+2019-08-26 10:18:29: Order ref: 182 / Type Sell / Status Submitted
+2019-08-26 10:18:29: Order ref: 181 / Type Buy / Status Accepted
+2019-08-26 10:18:29: Order ref: 182 / Type Sell / Status Accepted
+2019-08-26 10:19:39: Order ref: 181 / Type Buy / Status Completed
+2019-08-26T10:19:39, BUY EXECUTED, Size: 1.00, Ref: 181, Price: 2857.50000, Cost: 50.00000
+2019-08-26 10:19:39: Order ref: 182 / Type Sell / Status Canceled
+2019-08-26T10:19:39, Canceled ,
+2019-08-26 10:19:39  : Oref 183 / Sell Stop -3 at 2853.50000
+2019-08-26 10:19:40: Order ref: 183 / Type Sell / Status Submitted
+2019-08-26 10:19:40: Order ref: 183 / Type Sell / Status Accepted
+2019-08-26 10:21:06: Order ref: 183 / Type Sell / Status Canceled
+2019-08-26T10:21:06, Canceled ,
+2019-08-26 10:21:06: Order ref: 184 / Type Sell / Status Submitted
+2019-08-26 10:21:06: Order ref: 184 / Type Sell / Status Accepted
+2019-08-26 10:23:40: Order ref: 184 / Type Sell / Status Completed
+2019-08-26T10:23:40, SELL EXECUTED, Size: -1.00, Ref: 184,Price: 2858.00000, Cost: 50.00000
+2019-08-26T10:23:40, OPERATION PROFIT, GROSS 25.00000, NET 23.30000

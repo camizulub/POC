@@ -1,0 +1,7 @@
+Target 5.0
+
+Anchor 3.0
+
+Trailing se activa a 2.50 puntos a favor le resta 1.50 al close actual
+
+Shots 48 contratos se stopea en -900

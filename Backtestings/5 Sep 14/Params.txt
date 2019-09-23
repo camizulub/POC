@@ -1,0 +1,10 @@
+Stop 24
+
+self.anchor = 2.0
+
+self.target = 5.0
+
+self.tstop = 2.5  -1.50 del close
+
+Final Stop at 24 Contracts -900
+

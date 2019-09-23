@@ -1,0 +1,21 @@
+Anchor=2.0
+Shots= 4
+Profit=8.0
+Trailing =  If the trade was positive by 1.50 Points a Stop Order is send to close if the price returns to the opened price + 0.50 Points. P/L: +25 USD.
+
+
+Let me explain to you the level of risk:
+
+1. 1st shot: If the target (400 USD (8 Points)) is not reached:
+1.1. If the trade was positive by 1.50 Points a Stop Order is send to close if the price returns to the opened price + 0.50 Points. P/L: +25 USD.
+1.2. If 1.1 not apply, eventually it will hit the grid stop order. P/L: -200 USD
+Hits the 2nd shot. P/L: -800 USD Cum: -1000 USD
+3rd Shot. P/L: -1600 Cum: -2600 USD
+4th Shot: P/L: -3200 Cum: -5800 USD
+Final Stop Loss: If current pnl < 900 USD.
+So the Total Max Loss can be: -6700 USD (6.70%)
+
+For this test it enter to the third shot (max -2600)
+
+Profit = 2.952,1 (2.95%) in 1 Year.
+
