@@ -13,10 +13,11 @@ from market_profile import MarketProfile
 from math import fsum
 import time
 
-data = pd.read_csv('C:/Users/MiloZB/Dropbox/Codigos/Data/ES_1sec(2018)NinjaPOC.csv', parse_dates=True, index_col='Date')
+data = pd.read_csv('C:/Users/MiloZB/Dropbox/Codigos/Data/ES1M.csv', parse_dates=True, index_col='Date')
 commission, margin, mult = 0.85, 50, 50.0
 
 f = open("C:/Users/MiloZB/Dropbox/Codigos/Scripts/Repos/POC/Backtestings/logbook.txt", "a")
+f1 = open("C:/Users/MiloZB/Dropbox/Codigos/Scripts/Repos/POC/Backtestings/Indicators.txt", "a")
 
 
 class PandasData(btfeeds.PandasData):
@@ -43,6 +44,16 @@ class SimpleMovingAverage1(bt.Indicator):
         datasum = fsum(self.data.get(size=self.p.period))
         self.lines.smapoc[0] = datasum / self.p.period
 
+class Slope(bt.Indicator):
+    lines = ('slope',)
+    params = dict(period=5)
+
+    def next(self):
+        y = pd.Series(self.data.get(size=self.p.period))
+        x = pd.Series(range(0,y.shape[0]))	
+        m = (len(x) * np.sum(x*y) - np.sum(x) * np.sum(y)) / (len(x)*np.sum(x*x) - np.sum(x) ** 2)
+        self.lines.slope[0] = round(m, 4)
+
 class MultiDataStrategy(bt.Strategy):
     '''
     This strategy operates on 2 datas. The expectation is that the 2 datas are
@@ -55,7 +66,7 @@ class MultiDataStrategy(bt.Strategy):
     params = dict(
         stake=1,
         printout=True,
-        anchor = 1.0, expand = 1.0, target = 8.0, fstop = -2, tstop = 1.50, bestop = 1.0, atrl = 2.5,
+        anchor = 1.0, expand = 1.0, target = 8.0, fstop = -2, tstop = 2.0, bestop = 1.0, atrl = 2.5, pslope=5
         )
 
     def log(self, txt, dt=None):
@@ -114,16 +125,23 @@ class MultiDataStrategy(bt.Strategy):
         # To control operation entries
         self.orderid = None
         # Indicators
-        poc = SimpleMovingAverage1(self.data0.POC, period=1, plotname='POC', subplot=False,)
-        ppoc = SimpleMovingAverage1(self.data0.PPOC, period=1, plotname='PPOC', subplot=False,)
-        self.atr = bt.talib.ATR(self.data0.high, self.data0.low, self.data0.close, timeperiod=14)
-        #self.rsi = bt.talib.RSI(self.data0.close, timeperiod=14)
-        #self.macd = bt.talib.MACD(self.data0.close)
-        self.ematr = btind.ExponentialMovingAverage(self.atr, period=89)
+        poc = SimpleMovingAverage1(self.data0.POC, period=1, plotname='POC', subplot=False)
+        ppoc = SimpleMovingAverage1(self.data0.PPOC, period=1, plotname='PPOC', subplot=False)
+        sma80 = btind.SimpleMovingAverage(self.data1.close, period=80, plotname='SMA80')
+        sma240 = btind.SimpleMovingAverage(self.data1.close, period=240, plotname='SMA240')
+        self.atr = bt.talib.ATR(self.data1.high, self.data1.low, self.data1.close, timeperiod=14)
+        self.rsi = btind.RSI_EMA(self.data1.close, period=14)
+        self.macd = btind.MACDHistogram(self.data1.close)
+        #self.ematr = btind.ExponentialMovingAverage(self.atr, period=89)
         self.signal1 = btind.CrossOver(self.data0.close, poc, plot=False)
         self.signal2 = btind.CrossOver(self.data0.close, ppoc, plot=False)
+        self.sma80_slope = Slope(sma80, period=self.p.pslope, plot=False)
+        self.sma240_slope = Slope(sma240, period=self.p.pslope, plot=False)
+        self.macd_slope = Slope(self.macd, period=self.p.pslope, plot=False)
+        self.rsi_slope = Slope(self.rsi, period=self.p.pslope, plot=False)
         self.flag=True
         self.flag1 = False
+        self.flag2 = False
 
     def next(self):
         global o1, o2, o3, o4, o5, o6, o7, o1pnl, o2pnl, o3pnl, o4pnl, o5pnl, o6pnl, ot
@@ -134,12 +152,12 @@ class MultiDataStrategy(bt.Strategy):
 
         if self.orderid:
             return  # if an order is active, no new orders are allowed
-        '''if self.p.printout:
+        if self.p.printout:
             txt = ','.join(
-            ['%04d' % len(self.data0),
-            self.data0.datetime.datetime(0).isoformat(),
-            'Profit : %d' % pnl])
-        print(txt)'''
+            #['%04d' % len(self.data0),
+            [self.data0.datetime.datetime(0).isoformat(),
+            '''\nSlopeSMA80 : %f \nSlopeSMA240 : %f \nSlopeMACD : %f \nSlopeRSI : %f''' % (self.sma80_slope[0], self.sma240_slope[0], self.rsi_slope[0], self.macd_slope[0])])
+        print(txt, file=f1)
 
         if not self.position:  # not yet in market
             #self.trailing = True
@@ -150,6 +168,9 @@ class MultiDataStrategy(bt.Strategy):
             if self.flag1:
                 if o3.alive():
                     self.broker.cancel(o3)
+            if self.flag2:
+                if o4.alive():
+                    self.broker.cancel(o4)
 
                 if not self.trailing:
                     if ot.alive():
@@ -189,7 +210,7 @@ class MultiDataStrategy(bt.Strategy):
 
             if (pos.size==self.p.stake) and (len(self.orefs)==0):
 
-                o3 = self.sell(exectype=bt.Order.Stop, price=(float(o1.executed.price)-(self.p.anchor*2*self.p.expand)),
+                o3 = self.sell(exectype=bt.Order.Stop, price=(float(o1.executed.price)-(self.p.anchor*self.p.expand)),
                             size=self.p.stake*3)
                 
                 print(self.datetime.datetime(0),' : Oref %d / Sell Stop %d at %.5f' % (
@@ -204,7 +225,7 @@ class MultiDataStrategy(bt.Strategy):
 
             elif(pos.size==self.p.stake*-1) and (len(self.orefs)==0):
 
-                o3 = self.buy(exectype=bt.Order.Stop, price=(float(o2.executed.price)+(self.p.anchor*2*self.p.expand)),
+                o3 = self.buy(exectype=bt.Order.Stop, price=(float(o2.executed.price)+(self.p.anchor*self.p.expand)),
                             size=self.p.stake*3)
                 
                 print(self.datetime.datetime(0),' : Oref %d / Buy Stop %d at %.5f' % (
@@ -233,22 +254,22 @@ class MultiDataStrategy(bt.Strategy):
                 self.flag = True
                 self.orefs.append(ot.ref)
 
-            elif (pnl > 3.0*mult) and (pnl < 5.0*mult) and (pos.size==self.p.stake) and (len(self.orefs)==2):
+            elif (pnl > self.p.target*0.375*self.p.tstop*mult) and (pnl < 5.0*mult) and (pos.size==self.p.stake) and (len(self.orefs)==2):
                 self.broker.cancel(ot) 
                 ot = self.sell(exectype=bt.Order.Stop, price=(self.data0.close-self.p.bestop), size=self.p.stake)
                 self.orefs.append(ot.ref)
 
-            elif (pnl > 3.0*mult) and (pnl < 5.0*mult) and (pos.size==self.p.stake*-self.p.bestop) and (len(self.orefs)==2):
+            elif (pnl > self.p.target*0.375*self.p.tstop*mult) and (pnl < 5.0*mult) and (pos.size==self.p.stake*-self.p.bestop) and (len(self.orefs)==2):
                 self.broker.cancel(ot) 
                 ot = self.buy(exectype=bt.Order.Stop, price=(self.data0.close+self.p.bestop), size=self.p.stake)
                 self.orefs.append(ot.ref)
 
-            elif (pnl > 5.0*mult) and (pos.size==self.p.stake) and (len(self.orefs)==2):
+            elif (pnl > self.p.target*0.625*self.p.tstop*mult) and (pos.size==self.p.stake) and (len(self.orefs)==2):
                 self.broker.cancel(ot) 
                 ot = self.sell(exectype=bt.Order.Stop, price=(self.data0.close-self.p.bestop), size=self.p.stake)
                 self.orefs.append(ot.ref)
 
-            elif (pnl > 5.0*mult) and (pos.size==self.p.stake*-1) and (len(self.orefs)==2):
+            elif (pnl > self.p.target*0.625*self.p.tstop*mult) and (pos.size==self.p.stake*-1) and (len(self.orefs)==2):
                 self.broker.cancel(ot) 
                 ot = self.buy(exectype=bt.Order.Stop, price=(self.data0.close+self.p.bestop), size=self.p.stake)
                 self.orefs.append(ot.ref)
@@ -271,6 +292,8 @@ class MultiDataStrategy(bt.Strategy):
                         o4.ref, o4.size, o4.price), file=f)
 
                     self.orefs.append(o4.ref)
+
+                    self.flag2 = True
 
                 if (pnl > (25 + abs(o2pnl))):
                     self.close()
@@ -296,10 +319,10 @@ class MultiDataStrategy(bt.Strategy):
                     self.broker.cancel(o4)
                     self.flag =True
             
-            '''if (pos.size==self.p.stake*4):
+            if (pos.size==self.p.stake*4):
                 if (len(self.orefs)==0):
                     o3pnl = round((o4.executed.price-o3.executed.price)*(o3.executed.size+o4.executed.size)*(mult/1.5), 5)                  
-                    o5 = self.sell(exectype=bt.Order.Stop, price=(float(o1.executed.price)-(self.p.anchor*2*self.p.expand)),
+                    o5 = self.sell(exectype=bt.Order.Stop, price=(float(o1.executed.price)-(self.p.anchor*self.p.expand)),
                     size=self.p.stake*12)
                 
                     print(self.datetime.datetime(0),' : Oref %d / Sell Stop %d at %.5f' % (
@@ -315,7 +338,7 @@ class MultiDataStrategy(bt.Strategy):
             elif (pos.size==self.p.stake*4*-1):
                 if (len(self.orefs)==0):
                     o3pnl = round((o4.executed.price-o3.executed.price)*(o3.executed.size+o4.executed.size)*(mult/1.5), 5)
-                    o5 = self.buy(exectype=bt.Order.Stop, price=(float(o2.executed.price)+(self.p.anchor*2*self.p.expand)),
+                    o5 = self.buy(exectype=bt.Order.Stop, price=(float(o2.executed.price)+(self.p.anchor*self.p.expand)),
                     size=self.p.stake*12)
                 
                     print(self.datetime.datetime(0),' : Oref %d / Buy Stop %d at %.5f' % (
@@ -326,7 +349,7 @@ class MultiDataStrategy(bt.Strategy):
                 if (pnl > (25 + abs(o2pnl + o3pnl))):
                     self.close()
                     self.broker.cancel(o5)
-                    self.flag =True'''
+                    self.flag =True
 
             '''if (pos.size==self.p.stake*8):
                 if (len(self.orefs)==0):
@@ -396,14 +419,14 @@ class MultiDataStrategy(bt.Strategy):
                     self.broker.cancel(o7)
                     self.flag =True'''             
 
-            if (pos.size==self.p.stake*4) or (pos.size==self.p.stake*4*-1):
-                o3pnl = round((o4.executed.price-o3.executed.price)*(o3.executed.size+o4.executed.size)*(mult/1.5), 5)
+            if (pos.size==self.p.stake*8) or (pos.size==self.p.stake*8*-1):
+                o4pnl = round((o5.executed.price-o4.executed.price)*(o4.executed.size+o5.executed.size)*(mult/1.5), 5)
 
-                if (pnl > (25 + o2pnl + o3pnl)):
+                if (pnl > (25 + o2pnl + o3pnl +o4pnl)):
                     self.close()
                     self.flag=True
 
-                elif (pnl < self.p.fstop*pos.size*mult):
+                elif (pnl <= (self.p.fstop*abs(pos.size)*mult)):
                     self.close()
                     self.flag=True          
 
@@ -421,18 +444,23 @@ def runstrategy():
     cerebro = bt.Cerebro()
 
     # Add the 1st data to cerebro
-    df=PandasData(dataname=data, name ="Seconds Data", timeframe=bt.TimeFrame.Seconds, compression=1)
+    df=PandasData(dataname=data, name ="Seconds Data", timeframe=bt.TimeFrame.Minutes, compression=1, plot=False)
     cerebro.adddata(df)
 
     # Create the 2nd data
-    '''data1 = data.resample('H').last()
-    data1['open'] = data.resample('H').first()
-    data1['high'] = data.resample('H').max()
-    data1['low'] = data.resample('H').min()
-    data1 = data1.dropna()
+
+    data1 = cerebro.resampledata(df, timeframe=bt.TimeFrame.Minutes,
+                             compression=5)
+    '''time_frame = '5Min'
+    data1 = data.resample(time_frame).last()
+    data1['Open'] = data.Close.resample(time_frame).first()
+    data1['High'] = data.Close.resample(time_frame).max()
+    data1['Low'] = data.Close.resample(time_frame).min()
+    data1['Volume'] = data.Volume.resample(time_frame).sum()
+    data1.dropna(inplace=True)
     
     # Add the 2nd data to cerebro
-    df1=PandasData(dataname=data1, name="Hourly Data", timeframe=bt.TimeFrame.Minutes, compression=60)
+    df1=PandasData(dataname=data1, name="Minute Data", timeframe=bt.TimeFrame.Minutes, compression=1)
     cerebro.adddata(df1)'''
 
     # Add the strategy
@@ -460,6 +488,7 @@ def runstrategy():
                 oldsync=args.oldsync)
 
     f.close()
+    f1.close()
 
     # Plot if requested
     #if args.plot:
