@@ -13,7 +13,7 @@ from market_profile import MarketProfile
 from math import fsum
 import time
 
-data = pd.read_csv('C:/Users/MiloZB/Dropbox/Codigos/Data/ES_1sec(2018)NinjaPOC.csv', parse_dates=True, index_col='Date')
+data = pd.read_csv('C:/Users/MiloZB/Dropbox/Codigos/Data/ES_1min(2018)NinjaWPOC.csv', parse_dates=True, index_col='Date')
 commission, margin, mult = 0.85, 50, 50.0
 
 f = open("C:/Users/MiloZB/Dropbox/Codigos/Scripts/Repos/POC/Backtestings/logbook.txt", "a")
