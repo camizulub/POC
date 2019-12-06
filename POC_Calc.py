@@ -5,19 +5,22 @@ import numpy as np
 from market_profile import MarketProfile
 import time
 
+symbol = 'BTC'
+
 class DailyPOC(object):
+
     def mp_poc(self, data):
         '''Calculates the POC for each Trading Session during the week'''
-        na0 = np.where((data.index.dayofweek == 6) & (data.index.hour == 17) & (data.index.minute == 0) & (data.index.second == 0)) #for IB (17, 0)
-        nb0 = np.where((data.index.dayofweek == 4) & (data.index.hour == 15) & (data.index.minute == 59) & (data.index.second == 0))#for IB (15, 59)
+        na0 = np.where((data.index.dayofweek == 6) & (data.index.hour == 18) & (data.index.minute == 0) & (data.index.second == 0)) #for IB (17, 0)
+        nb0 = np.where((data.index.dayofweek == 4) & (data.index.hour == 15) & (data.index.minute == 59) & (data.index.second == 59))#for IB (15, 59)
         na1 = np.where(((data.index.dayofweek == 0)|(data.index.dayofweek == 1)|(data.index.dayofweek == 2)\
-            |(data.index.dayofweek == 3)) & (data.index.hour == 15) & (data.index.minute == 59) & (data.index.second == 0))#for IB (15, 31)
+            |(data.index.dayofweek == 3)) & (data.index.hour == 16) & (data.index.minute == 59) & (data.index.second == 0))#for IB (15, 31)
         nb1 = np.where(((data.index.dayofweek == 0)|(data.index.dayofweek == 1)|(data.index.dayofweek == 2)\
-            |(data.index.dayofweek == 3)) & (data.index.hour == 17) & (data.index.minute == 0) & (data.index.second == 0))#for IB (15, 14)
+            |(data.index.dayofweek == 3)) & (data.index.hour == 18) & (data.index.minute == 0) & (data.index.second == 0))#for IB (15, 14)
         nmaster = np.concatenate([na0[0], nb0[0], na1[0], nb1[0]])
         nmaster = nmaster[nmaster>=na0[0][0]]
         nmaster.sort()
-        mp = MarketProfile(data, tick_size=0.25)
+        mp = MarketProfile(data, tick_size=5.0)
         data['POC'] = np.nan
         for i,k in zip(nmaster[0::2], nmaster[1::2]):
             a = data.index[i]
@@ -63,15 +66,15 @@ class Weekly3POC(object):
     def mp_poc(self, data):
         '''Calculates the POC for the week'''
         na0 = np.where((data.index.dayofweek == 6) & (data.index.hour == 18) & (data.index.minute == 0) & (data.index.second == 0))
-        nb0 = np.where((data.index.dayofweek == 2) & (data.index.hour == 8) & (data.index.minute == 30) & (data.index.second == 59))
+        nb0 = np.where((data.index.dayofweek == 2) & (data.index.hour == 9) & (data.index.minute == 30) & (data.index.second == 59))
         na1 = np.where((data.index.dayofweek == 2) & (data.index.hour == 9) & (data.index.minute == 31) & (data.index.second == 0))
         nb1 = np.where((data.index.dayofweek == 3) & (data.index.hour == 0) & (data.index.minute == 0) & (data.index.second == 59))
         na2 = np.where((data.index.dayofweek == 3) & (data.index.hour == 0) & (data.index.minute == 1) & (data.index.second == 0))
-        nb2 = np.where((data.index.dayofweek == 4) & (data.index.hour == 16) & (data.index.minute == 59) & (data.index.second == 59))
+        nb2 = np.where((data.index.dayofweek == 4) & (data.index.hour == 15) & (data.index.minute == 59) & (data.index.second == 59))
         nmaster = np.concatenate([na0[0], nb0[0], na1[0], nb1[0], na2[0], nb2[0]])
         nmaster = nmaster[nmaster>=na0[0][0]]
         nmaster.sort()
-        mp = MarketProfile(data, tick_size=0.25)
+        mp = MarketProfile(data, tick_size=0.10)
         data['POC3w'] = np.nan
         for i,k in zip(nmaster[0::2], nmaster[1::2]):
             a = data.index[i]
@@ -117,7 +120,7 @@ class WeeklyPOC(object):
     def mp_poc(self, data):
         '''Calculates the POC for the week'''
         na0 = np.where((data.index.dayofweek == 6) & (data.index.hour == 18) & (data.index.minute == 0) & (data.index.second == 0))
-        nb0 = np.where((data.index.dayofweek == 4) & (data.index.hour == 16) & (data.index.minute == 59) & (data.index.minute == 59) & (data.index.second == 59))
+        nb0 = np.where((data.index.dayofweek == 4) & (data.index.hour == 15) & (data.index.minute == 59) & (data.index.second == 59))
         nmaster = np.concatenate([na0[0], nb0[0]])
         nmaster = nmaster[nmaster>=na0[0][0]]
         nmaster.sort()
@@ -165,7 +168,7 @@ class WeeklyPOC(object):
 
 if __name__ == '__main__':
 
-    data = pd.read_csv('C:/Users/MiloZB/Dropbox/Codigos/Data/ES_1sec(2018)Ninja.csv', parse_dates=True, index_col='Date')
+    data = pd.read_csv('C:/Users/MiloZB/Dropbox/Codigos/Data/'+symbol+'(2018)NinjaSeconds.csv', parse_dates=True, index_col='Date')
     print('Starting')
     day = DailyPOC()
     day.mp_poc(data)
@@ -182,5 +185,5 @@ if __name__ == '__main__':
     week.lower_PPOC(data)
     week.upper_PPOC(data)
     data.drop(columns=['Pointsw'], inplace=True)
-    data.to_csv('C:/Users/MiloZB/Dropbox/Codigos/Data/ES_1sec(2018)NinjaWPOC.csv')
+    data.to_csv('C:/Users/MiloZB/Dropbox/Codigos/Data/'+symbol+'(2018)NinjaSecondsWPOC.csv')
     print('Finish')
